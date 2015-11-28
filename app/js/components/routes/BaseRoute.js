@@ -1,40 +1,33 @@
 import React from "react"
-import Counter from "../example/Counter"
-import store from "../../store"
+import { connect } from "react-redux"
 
+import Counter from "../example/Counter"
 import {
   incrementCounter,
   decrementCounter
 } from "../../action-creators"
 
-class BaseRoute extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      data: store.getState()
-    };
-  }
+const mapStateToProps = (
+  state,
+  containerProps
+) => {
+  return {
+    value: state.counter
+  };
+};
 
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(
-      () => this.setState({ data: store.getState() }) );
+const mapDispatchToProps = (
+  dispatch,
+  containerProps
+) => {
+  return {
+    onIncrement: () => dispatch(incrementCounter()),
+    onDecrement: () => dispatch(decrementCounter())
   }
+};
 
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  render() {
-    return (
-      <div>
-        <Counter
-          value={this.state.data.counter}
-          onIncrement={() => { store.dispatch(incrementCounter()) }}
-          onDecrement={() => { store.dispatch(decrementCounter()) }}
-        />
-      </div>);
-  }
-}
+const BaseRoute =
+  connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 export default BaseRoute;
