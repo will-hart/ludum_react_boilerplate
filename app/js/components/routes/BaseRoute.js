@@ -2,6 +2,11 @@ import React from "react"
 import Counter from "../example/Counter"
 import store from "../../store"
 
+import {
+  incrementCounter,
+  decrementCounter
+} from "../../action-creators"
+
 class BaseRoute extends React.Component {
   constructor(props) {
     super(props);
@@ -25,8 +30,8 @@ class BaseRoute extends React.Component {
       <div>
         <Counter
           value={this.state.data.counter}
-          onIncrement={() => { store.dispatch({ type: "INCREMENT" }) }}
-          onDecrement={() => { store.dispatch({ type: "DECREMENT" }) }}
+          onIncrement={() => { store.dispatch(incrementCounter()) }}
+          onDecrement={() => { store.dispatch(decrementCounter()) }}
         />
       </div>);
   }
