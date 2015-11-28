@@ -3,7 +3,6 @@ import React from "react"
 export default class Counter {
 
   render() {
-    console.log("Rendered counter");
     return (
       <div>
         <h1>{this.props.value}</h1>
