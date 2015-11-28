@@ -1,4 +1,8 @@
 const CounterReducer = (state = 0, action) => {
+  if (typeof(state) !== "number") {
+    state = 0;
+  }
+
   switch(action.type) {
     case "INCREMENT":
       return state + 1;

@@ -1,7 +1,6 @@
 import React from "react"
 
-export default class Counter {
-
+class Counter {
   render() {
     return (
       <div>
@@ -11,7 +10,13 @@ export default class Counter {
         <button onClick={() => this.props.onDecrement()}>-</button>
       </div>
     );
-
   }
-
 }
+
+// uncomment this to get the store via the react-reflux
+// Provider which is wrapping the App component
+// Counter.contextTypes = {
+//   store: React.PropTypes.object
+// }
+
+export default Counter;
