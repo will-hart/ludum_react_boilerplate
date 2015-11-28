@@ -43,7 +43,7 @@
     "start": "node devServer.js",
     "lint": "eslint app",
     "validate": "npm ls",
-    "test" : "./node_modules/.bin/mocha --compilers js:babel/register"
+    "test": "./node_modules/.bin/mocha --compilers js:babel/register"
   },
   "pre-commit": [
     "lint"

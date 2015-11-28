@@ -1,20 +1,23 @@
 import CounterReducer from "./CounterReducer"
+import Storage from "../services/Storage"
+const storage = new Storage();
 
-const initialState = {
-  counter: 0
-}
+const CoreReducer = (state = storage.load(), action) => {
+  let newState = {};
 
-const CoreReducer = (state = initialState, action) => {
   switch (action.type) {
 
     // other actions here
 
     default:
-      return {
+      newState = {
         ...state,
         counter: CounterReducer(state.counter, action)
       };
   }
+
+  storage.save(newState);
+  return newState;
 };
 
 export default CoreReducer;
