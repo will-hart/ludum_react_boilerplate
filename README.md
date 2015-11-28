@@ -10,6 +10,10 @@ Originally based on https://github.com/Kemcake/parse-react-sample/
 
 ## Version History
 
-**0.1**
+**0.2.0**
+
+Added some unit tests for the reducers.
+
+**0.1.0**
 
 - Initial release, set up `redux`, `react-router`, `localStorage` and `webpack`
