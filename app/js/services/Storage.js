@@ -4,17 +4,28 @@ const initialState = {
   counter: 0
 }
 
+// handle running in node (i.e. testing) where there is no local storage
+const storageDefined =
+  typeof(localStorage) !== "undefined" && localStorage !== null;
+
 class Storage {
   constructor() {
     this.load();
   }
 
   save(data) {
-    localStorage.setItem(storageKey, JSON.stringify(data));
+    if (storageDefined) {
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    }
   }
 
   load() {
-    this.data = JSON.parse(localStorage.getItem(storageKey));
+    if (storageDefined) {
+      this.data = JSON.parse(localStorage.getItem(storageKey));
+    } else {
+      this.data = null;
+    }
+
     if (this.data === null) {
       this.data = initialState;
     }
@@ -23,7 +34,10 @@ class Storage {
   }
 
   clear() {
-    localStorage.clear(storageKey);
+    if (storageDefined) {
+      localStorage.clear(storageKey);
+    }
+
     this.data = {};
   }
 
