@@ -33,7 +33,8 @@
     "alt": "^0.17.9",
     "material-ui": "^0.13.4",
     "react": "^0.14.3",
-    "react-router": "^0.13.2"
+    "react-router": "^0.13.2",
+    "redux": "^3.0.4"
   },
   "scripts": {
     "clean": "rimraf dist",
@@ -41,7 +42,8 @@
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
     "lint": "eslint app",
-    "validate": "npm ls"
+    "validate": "npm ls",
+    "test" : "./node_modules/.bin/mocha --compilers js:babel/register"
   },
   "pre-commit": [
     "lint"
