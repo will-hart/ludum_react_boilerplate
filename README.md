@@ -10,6 +10,10 @@ Originally based on https://github.com/Kemcake/parse-react-sample/
 
 ## Version History
 
+**0.2.1**
+
+Run the dev server in development mode.
+
 **0.2.0**
 
 Added some unit tests for the reducers.
