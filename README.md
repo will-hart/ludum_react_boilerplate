@@ -10,6 +10,10 @@ Originally based on https://github.com/Kemcake/parse-react-sample/
 
 ## Version History
 
+**0.2.2**
+
+Fix mounting of React comoponents using ReactDOM
+
 **0.2.1**
 
 Run the dev server in development mode.
