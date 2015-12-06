@@ -5,5 +5,5 @@ import ReactDOM from "react-dom";
 require("./../assets/styles/main.less")
 
 router.run(function (Handler) {
-  ReactDOM.render(<Handler/>, document.getElementById("react-root"));
+  ReactDOM.render(<Handler/>, document.getElementById("root"));
 });

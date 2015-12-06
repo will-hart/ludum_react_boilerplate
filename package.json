@@ -1,6 +1,6 @@
 {
   "name": "react-ludum-boilerplate",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "repository": "https://github.com/will-hart/ludum_react_boilerplate",
   "description": "A boilerplate for react applications on Ludum Dare",
