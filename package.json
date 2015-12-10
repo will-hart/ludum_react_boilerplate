@@ -37,7 +37,8 @@
   "dependencies": {
     "react": "^0.14.3",
     "react-router": "^0.13.2",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "reselect": "^2.0.1"
   },
   "scripts": {
     "clean": "rimraf dist",
