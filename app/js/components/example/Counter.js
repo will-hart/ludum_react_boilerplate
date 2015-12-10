@@ -1,6 +1,10 @@
 import React from "react"
+import {connect} from "react-redux";
 
-class Counter {
+import ThingSelector from "../../selectors/ThingSelector";
+
+
+class Counter extends React.Component {
   render() {
     return (
       <div>
@@ -8,6 +12,13 @@ class Counter {
 
         <button onClick={() => this.props.onIncrement()}>+</button>
         <button onClick={() => this.props.onDecrement()}>-</button>
+
+        <div style={{marginTop: "1em", fontWeight:"bolder"}}>
+        	Thing says: 
+        	<span style={{fontWeight: "normal", color: "#888", marginLeft: "1em"}}>
+        		{this.props.thingStatement}
+        	</span>
+        </div>
       </div>
     );
   }
@@ -19,4 +30,4 @@ class Counter {
 //   store: React.PropTypes.object
 // }
 
-export default Counter;
+export default connect(ThingSelector)(Counter);
