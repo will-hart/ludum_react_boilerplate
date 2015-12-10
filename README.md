@@ -10,9 +10,10 @@ Originally based on https://github.com/Kemcake/parse-react-sample/
 
 ## Version History
 
-**0.2.4**
+**0.3.0**
 
-Fix missing 0.2.2 changes
+Introduce selector example    
+Remove some dependencies
 
 **0.2.3**
 
