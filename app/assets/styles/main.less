@@ -24,6 +24,16 @@
   user-select: none;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 body,
 html {
 }
@@ -50,10 +60,55 @@ div,
 .intro-wrapper {
 	& > div {
 		width: 800px;
-		text-align: left;
-		font-size: 1.4em;
+		font-size: 2em;
 		margin-bottom: 1em;
+		display: inline;
 	}
+
+	& span {
+		margin-right: 0.3em;
+		opacity: 0;
+		color: #CCC;
+		animation-name: fade;
+		animation-duration: 3s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in;
+		animation-fill-mode: forwards;
+	}
+
+	& button {
+		background: none;
+		border: none;
+		color: white;
+		font-size: 2em;
+		cursor: pointer;
+		padding: 0.8em;
+		border: 1px solid #222;
+
+		&:hover {
+			border: 1px solid #666;
+			background: #333;
+		}
+	}
+
+	a.helper-link {
+		font-size: 1.1em;
+		position: fixed;
+		bottom: 5px;
+		right: 5px;
+		color: #111 !important;
+		text-decoration: none;
+	}
+
+}
+
+a.helper-link {
+	font-size: 1.1em;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	color: #111 !important;
+	text-decoration: none;
 }
 
 .game-wrapper {
@@ -154,4 +209,3 @@ div,
 		width: 80px;
 	}
 }
-

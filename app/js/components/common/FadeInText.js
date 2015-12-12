@@ -8,6 +8,28 @@ class FadeInText extends React.Component {
 
 	constructor(props) {
 		super(props)
+
+		this.state = {
+			visible: false
+		};
+
+		this.timeout = null;
+
+		this._startFading = this._startFading.bind(this);
+	}
+
+	componentDidMount() {
+		this.timeout = setTimeout(this._startFading, this.props.delay);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.timeout);
+	}
+
+	_startFading() {
+		this.setState({
+			visible: true
+		});
 	}
 
 	_getText() {
@@ -15,10 +37,13 @@ class FadeInText extends React.Component {
 	}
 
 	render() {
+		let classes = "fade-text";
+		let animDelay = this.props.delay / 1000 + "s";
+
 		return (
-			<div className="fade-in-text">
+			<span className={classes} style={{animationDelay: animDelay}}>
 				{this._getText()}
-			</div>
+			</span>
 		);
 	}
 }

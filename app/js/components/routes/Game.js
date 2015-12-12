@@ -17,7 +17,11 @@ import {
 
 class DumbGame extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
+
+		this.state = {
+			helpVisible: false
+		};
 	}
 
 	componentDidMount() {
@@ -43,7 +47,11 @@ class DumbGame extends React.Component {
 					<TerminalController />
 					<StatusController />
 					<PowerController />
-				</div>
+			</div>
+
+			<a href="#" className="helper-link" onClick={(e) => this._showHelp(e)}>
+				Help
+			</a>
 			</div>
 		);
 	}

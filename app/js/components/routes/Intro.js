@@ -17,15 +17,23 @@ class Intro extends React.Component {
 	render() {
 		return (
 			<div className="intro-wrapper">
-				<FadeInText text="Last year's crop wasn't that great" delay={500} />
-				<FadeInText text="and unfortunately we had to let Freddy go..." delay={1500} />
-				<FadeInText text="...from altitude." delay={3500} />
-				<FadeInText text="Dont let the crop die." delay={4500} />
+				<div>
+					<FadeInText text="Last year's harvest wasn't great." delay={500} />
+					<FadeInText text="Unfortunately, Freddy wasn't delivering the goods," delay={3000} />
+					<FadeInText text="so we had to let him go..." delay={5000} />
+					<FadeInText text="without a parachute." delay={8000} />
+					<FadeInText text="Dont let the crops die" delay={12000} />
+					<FadeInText text="(or else)" delay={15000} />
+				</div>
 
 				<FadeInText text={
-					<button onClick={(e) => this._startGame(e)}>
-						Start
-					</button>} delay={5000} />
+					<button className="game-start-button" onClick={(e) => this._startGame(e)}>
+						Start {'\u21A0'}
+					</button>} delay={15500} />
+
+					<a href="#" className="skipper" onClick={(e) => this._startGame(e)}>
+						Skip Intro
+					</a>
 			</div>
 		);
 	}
