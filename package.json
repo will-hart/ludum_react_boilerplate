@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "react": "^0.14.3",
+    "react-preload": "^0.2.2",
     "react-router": "^0.13.2",
     "redux": "^3.0.4",
     "reselect": "^2.0.1"

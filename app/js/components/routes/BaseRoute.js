@@ -1,11 +1,7 @@
-import React from "react"
-import { connect } from "react-redux"
+import React from "react";
+import { connect } from "react-redux";
 
-import Counter from "../example/Counter"
-import {
-  incrementCounter,
-  decrementCounter
-} from "../../action-creators"
+import Preloader from "../common/Preloader";
 
 
 const mapStateToProps = (
@@ -13,21 +9,12 @@ const mapStateToProps = (
   containerProps
 ) => {
   return {
-    value: state.counter
+    buttons: state.buttons,
+    condition: state.condition
   };
 };
 
-const mapDispatchToProps = (
-  dispatch,
-  containerProps
-) => {
-  return {
-    onIncrement: () => dispatch(incrementCounter()),
-    onDecrement: () => dispatch(decrementCounter())
-  }
-};
-
 const BaseRoute =
-  connect(mapStateToProps, mapDispatchToProps)(Counter);
+  connect(mapStateToProps)(Preloader);
 
 export default BaseRoute;
