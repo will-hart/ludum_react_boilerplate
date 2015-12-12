@@ -22,9 +22,9 @@ class DumbLightController extends React.Component {
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Light"  backgroundOffset="0px" />
-				<ToggleSwitch label="Illum." buttonName="illumination" isOn={this.props.buttons.illumination} onClick={this.props.onToggleButton} />
-				<ToggleSwitch label="Heat" buttonName="heater" isOn={this.props.buttons.heater} onClick={this.props.onToggleButton} />
+				<ToggleSwitch label="Lights" buttonName="illumination" isOn={this.props.buttons.illumination} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Brightness" buttonName="brightness" value={this.props.buttons.brightness} onClick={this.props.onIncrementValue} />
+				<ToggleSwitch label="Heat" buttonName="heater" isOn={this.props.buttons.heater} onClick={this.props.onToggleButton} />
 				<LedDisplay label="Power" isOn={this.props.buttons.mainPower || this.props.buttons.battery} />
 			</div>
 		);

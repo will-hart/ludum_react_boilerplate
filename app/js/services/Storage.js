@@ -21,12 +21,18 @@ const initialState = {
   condition: {
     health: 100,
     battery: 50,
-    temperature: 10,
+    temperature: {
+      system: 0,
+      battery: 0,
+      light: 0,
+      food: 0,
+      water: 0
+    },
     light: 0,
     food: 0,
     water: 0,
     growth: 0,
-    terminal: "GrowMaster 2.0 HyperTerminal...Loading Complete\nRunning Diagnostics...complete"
+    terminal: ""
   }
 }
 

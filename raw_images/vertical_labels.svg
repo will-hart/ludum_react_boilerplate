@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.5591041"
-     inkscape:cx="39.232942"
-     inkscape:cy="70.739464"
+     inkscape:zoom="5.0333333"
+     inkscape:cx="86.579277"
+     inkscape:cy="75.578796"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="true"
      units="px"
      inkscape:window-width="1920"
@@ -144,5 +144,60 @@
          x="977.20209"
          id="tspan4168"
          sodipodi:role="line">POWER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="46.551334"
+       y="977.20209"
+       id="text4153"><tspan
+         sodipodi:role="line"
+         id="tspan4155"
+         x="977.20209"
+         y="46.551334"
+         style="fill:#161919;fill-opacity:1;">WATER</tspan></text>
+    <text
+       id="text4157"
+       y="977.20209"
+       x="76.633118"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#161919;fill-opacity:1;"
+         y="76.633118"
+         x="977.20209"
+         id="tspan4159"
+         sodipodi:role="line">FOOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="106.7149"
+       y="977.20209"
+       id="text4161"><tspan
+         sodipodi:role="line"
+         id="tspan4163"
+         x="977.20209"
+         y="106.7149"
+         style="fill:#161919;fill-opacity:1;">Cooling</tspan></text>
+    <text
+       id="text4165"
+       y="977.20209"
+       x="136.80824"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#161919;fill-opacity:1;"
+         y="136.80824"
+         x="977.20209"
+         id="tspan4167"
+         sodipodi:role="line">STATUS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="166.87846"
+       y="977.20209"
+       id="text4169"><tspan
+         sodipodi:role="line"
+         id="tspan4171"
+         x="977.20209"
+         y="166.87846"
+         style="fill:#161919;fill-opacity:1;">POWER</tspan></text>
   </g>
 </svg>

@@ -21,7 +21,7 @@ class DumbGame extends React.Component {
 	}
 
 	componentDidMount() {
-		this.updateTimer = setInterval(this._update.bind(this), 1000);
+		this.updateTimer = setInterval(this._update.bind(this), 500);
 	}
 
 	componentWillUnmount() {

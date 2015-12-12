@@ -21,10 +21,10 @@ class DumbStatusController extends React.Component {
 			<div className="control-group">
 				<VerticalLabel label="Status"  backgroundOffset="-120px" />
 				<LedBarGraph label="BATT" value={this.props.condition.battery} />
-				<LedBarGraph label="TEMP" value={this.props.condition.temperature} />
+				<LedBarGraph label="TEMP" value={this.props.condition.temperature.system} />
+				<LedBarGraph label="H20" value={this.props.condition.water} />
 				<LedBarGraph label="LIGHT" value={this.props.condition.light} />
 				<LedBarGraph label="FOOD" value={this.props.condition.food} />
-				<LedBarGraph label="H20" value={this.props.condition.water} />
 				<LedBarGraph label="GROW" value={this.props.condition.growth} />
 			</div>
 		);

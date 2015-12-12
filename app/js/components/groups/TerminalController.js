@@ -12,8 +12,15 @@ class DumbTerminalController extends React.Component {
 	}
 
 	render() {
+    const isOn = this.props.condition.terminal.length !== 0;
+    let classes = "terminal";
+
+    if (isOn) {
+      classes += " on";
+    }
+
 		return (
-			<div className="terminal">
+			<div className={classes}>
 				<Terminal value={this.props.condition.terminal} />
 			</div>
 		);

@@ -5,14 +5,14 @@ class SystemRotarySwitch extends RotarySwitch {
 	_getSystem() {
 		const val = this.props.value;
 		const data = {
-			1: "BATTERY",
-			2: "NUTRIENT",
-			3: "LIGHT",
-			4: "CHARGE"
+			1: "WATER",
+			2: "LIGHT",
+			3: "FOOD",
+			4: "SYSTEM"
 		};
 		const isPowered = this.props.isPowered;
 
-		return isPowered ? data[val] : "\u2000";
+		return isPowered ? "\u2000" + data[val] + "\u2000" : "\u2000";
 	}
 
 	render() {
