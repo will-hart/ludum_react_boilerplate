@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+import { connect } from "react-redux";
+
 import {
 	CoolingController,
 	LightController,
@@ -9,9 +11,25 @@ import {
 	WaterController
 } from "../groups";
 
-class Game extends React.Component {
+import {
+	updateCondition
+} from "../../action-creators";
+
+class DumbGame extends React.Component {
 	constructor(props) {
 		super(props)
+	}
+
+	componentDidMount() {
+		this.updateTimer = setInterval(this._update.bind(this), 1000);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.updateTimer);
+	}
+
+	_update() {
+ 		this.props.onUpdateCondition();
 	}
 
 	render() {
@@ -30,5 +48,27 @@ class Game extends React.Component {
 		);
 	}
 }
+
+const mapStateToProps = (
+  state,
+  containerProps
+) => {
+  return {
+    buttons: state.buttons,
+    condition: state.condition
+  };
+};
+
+const mapDispatchToProps = (
+  dispatch,
+  containerProps
+) => {
+  return {
+    onUpdateCondition: () => dispatch(updateCondition())
+  };
+};
+
+const Game =
+  connect(mapStateToProps, mapDispatchToProps)(DumbGame);
 
 export default Game;

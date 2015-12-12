@@ -24,7 +24,6 @@ class RotarySwitch extends React.Component {
 			<div className="rotary-switch" 
 				style={{backgroundPosition: offset}}
 				onClick={(e) => this._handleClick(e)}>
-				{this.props.value}
 				{this.props.label}
 			</div>
 		);

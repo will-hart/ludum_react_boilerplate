@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.6622222"
-     inkscape:cx="152.8563"
-     inkscape:cy="-24.322196"
+     inkscape:cx="157.96994"
+     inkscape:cy="-29.435833"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -65,13 +65,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-902.36216)">
-    <rect
-       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect11489"
-       width="90"
-       height="150"
-       x="0"
-       y="902.36218" />
     <g
        id="g4168">
       <g
@@ -133,13 +126,6 @@
          id="tspan4166"
          x="82.118988"
          y="944.37421">4</tspan></text>
-    <rect
-       y="902.36218"
-       x="90"
-       height="150"
-       width="90"
-       id="rect4766"
-       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <circle
        r="31.266788"
        cy="985.75641"
@@ -337,13 +323,6 @@
            x="78.509361"
            y="946.78064">4</tspan></text>
     </g>
-    <rect
-       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4850"
-       width="90"
-       height="150"
-       x="270"
-       y="902.36218" />
     <circle
        style="opacity:1;fill:#191f22;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle4856"
@@ -397,13 +376,6 @@
          id="tspan4874"
          x="352.11899"
          y="944.37421">4</tspan></text>
-    <rect
-       y="902.36218"
-       x="180"
-       height="150"
-       width="90"
-       id="rect4878"
-       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <circle
        r="31.266788"
        cy="1001.7166"

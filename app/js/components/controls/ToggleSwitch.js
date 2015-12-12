@@ -14,7 +14,6 @@ class ToggleSwitch extends React.Component {
 
 	_handleClick(e) {
 		e.preventDefault();
-		console.log("Clicked", this.props.buttonName);
 		this.props.onClick(this.props.buttonName);
 	}
 

@@ -29,10 +29,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.5591041"
-     inkscape:cx="-3.6149199"
-     inkscape:cy="54.443228"
+     inkscape:cx="39.232942"
+     inkscape:cy="70.739464"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="true"
      units="px"
      inkscape:window-width="1920"
@@ -62,20 +62,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Background"
-     sodipodi:insensitive="true">
-    <rect
-       transform="translate(0,-902.36214)"
-       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4138"
-       width="180"
-       height="150"
-       x="0"
-       y="902.36212"
-       inkscape:export-filename="G:\Code\ld34\app\assets\images\vertical_labels.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-  </g>
+     inkscape:label="Background" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

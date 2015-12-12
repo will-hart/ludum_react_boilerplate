@@ -25,14 +25,21 @@
 }
 
 body,
+html {
+}
+
 html,
-div {
+body,
+div,
+{
   margin:0;
   padding:0;
   font-family: 'Lato', sans-serif;
+  color: white;
 }
 
 .intro-wrapper, .game-wrapper {
+  background: #222;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -52,9 +59,9 @@ div {
 
 .game-wrapper {
 	.game-area {
+		background: #586e75;
 		display: flex;
 		flex-flow: column wrap;
-		background: #586e75;
 		width: 800px;
 		height: 610px;
 		color: white;
@@ -82,11 +89,21 @@ div {
 		left: 12px;
 		overflow: hidden;
 		font-family: 'VT323', monospace;
-		.noselect();
+		.noselect;
+	}
+
+	& p {
+		.noselect;
+		margin: 0;
+		color: #CCC;
 	}
 }
 
-.toggle-switch, .rotary-switch, .led-display, .led-bar-graph {
+.toggle-switch, 
+.rotary-switch, 
+.led-display, 
+.led-bar-graph,
+.spacer {
 	width: 90px;
 	height: 150px;
 	color: #191f22;
@@ -101,7 +118,7 @@ div {
 }
 
 .toggle-switch.on {
-	background-position: -810px 0;
+	background-position: -90px 0;
 }
 
 .vertical-label { 
@@ -124,5 +141,12 @@ div {
 
 .rotary-switch {
 	background: url(../images/rotary_switch.png) top left no-repeat;
+
+	& > .system-rotary-label {
+		background: #191f22;
+		color: #B22F2F;
+		text-align: center;
+		width: 80px;
+	}
 }
 

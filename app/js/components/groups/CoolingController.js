@@ -8,6 +8,7 @@ import {
 import {
 	LedDisplay,
 	RotarySwitch,
+	SystemRotarySwitch,
 	ToggleSwitch,
 	VerticalLabel
 } from "../controls";
@@ -25,7 +26,8 @@ class DumbCoolingController extends React.Component {
 				<ToggleSwitch label="Fan" buttonName="coolingFan" isOn={this.props.buttons.coolingFan} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Pump" buttonName="coolingPump" isOn={this.props.buttons.coolingPump} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="coolingFlow" value={this.props.buttons.coolingFlow} onClick={this.props.onIncrementValue} />
-				<RotarySwitch label="System" buttonName="coolingSystem" value={this.props.buttons.coolingSystem} onClick={this.props.onIncrementValue} />
+				<SystemRotarySwitch label="System" buttonName="coolingSystem" value={this.props.buttons.coolingSystem} 
+					onClick={this.props.onIncrementValue} isPowered={this.props.buttons.mainPower || this.props.buttons.battery} />
 			</div>
 		);
 	}

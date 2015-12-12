@@ -20,10 +20,10 @@ class DumbPowerController extends React.Component {
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Power"  backgroundOffset="-150px" />
-				<ToggleSwitch label="Main" buttonName="mainPower" isOn={this.props.buttons.mainPower} onClick={this.props.onToggleButton} />
+				<ToggleSwitch label="Mains" buttonName="mainPower" isOn={this.props.buttons.mainPower} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Battery" buttonName="battery" isOn={this.props.buttons.battery} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Charge" buttonName="charge" isOn={this.props.buttons.charge} onClick={this.props.onToggleButton} />
-				<LedDisplay label="Charging" isOn={this.props.buttons.charge} />
+				<LedDisplay label="Charging" isOn={this.props.buttons.charge && this.props.buttons.mainPower} />
 			</div>
 		);
 	}

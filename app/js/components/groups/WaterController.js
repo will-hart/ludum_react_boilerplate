@@ -25,7 +25,7 @@ class DumbWaterController extends React.Component {
 				<ToggleSwitch label="Pump" buttonName="waterPumps" isOn={this.props.buttons.waterPumps} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Nutr. Mix" buttonName="nutrientMixer" isOn={this.props.buttons.nutrientMixer} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="waterFlowRate" value={this.props.buttons.waterFlowRate} onClick={this.props.onIncrementValue} />
-				<LedDisplay label="Power" isOn={this.props.buttons.mainPower && this.props.buttons.battery} />
+				<LedDisplay label="Power" isOn={this.props.buttons.mainPower || this.props.buttons.battery} />
 			</div>
 		);
 	}

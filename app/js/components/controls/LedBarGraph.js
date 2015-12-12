@@ -12,7 +12,7 @@ class LedBarGraph extends React.Component {
 
 	render() {
 		let offset = Math.floor(this.props.value / 10);
-		offset = -59 * Math.min(9, Math.max(offset, 0));
+		offset = -59 * Math.min(10, Math.max(offset, 0));
 
 		return (
 			<div className="led-bar-graph" style={{backgroundPosition: offset}}>

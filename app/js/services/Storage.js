@@ -26,7 +26,7 @@ const initialState = {
     food: 0,
     water: 0,
     growth: 0,
-    terminal: ""
+    terminal: "GrowMaster 2.0 HyperTerminal...Loading Complete\nRunning Diagnostics...complete"
   }
 }
 

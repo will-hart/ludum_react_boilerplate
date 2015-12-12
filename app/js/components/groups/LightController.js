@@ -25,7 +25,7 @@ class DumbLightController extends React.Component {
 				<ToggleSwitch label="Illum." buttonName="illumination" isOn={this.props.buttons.illumination} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Heat" buttonName="heater" isOn={this.props.buttons.heater} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Brightness" buttonName="brightness" value={this.props.buttons.brightness} onClick={this.props.onIncrementValue} />
-				<LedDisplay label="Power" isOn={this.props.buttons.mainPower && this.props.buttons.battery} />
+				<LedDisplay label="Power" isOn={this.props.buttons.mainPower || this.props.buttons.battery} />
 			</div>
 		);
 	}
