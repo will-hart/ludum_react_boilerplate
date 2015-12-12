@@ -12,7 +12,7 @@ const toggleButton = (state, button) => {
 };
 
 const incrementValue = (state, button) => {
-  let val = state.buttons[button]++;
+  let val = state.buttons[button] + 1;
   if (val > 4) {
     val = 1;
   }
@@ -28,7 +28,7 @@ const ButtonReducer = (state, action) => {
     case ToggleButton:
       return toggleButton(state, action.button);
 
-    case IncrementValue: 
+    case IncrementValue:
       return incrementValue(state, action.button);
 
     default:
