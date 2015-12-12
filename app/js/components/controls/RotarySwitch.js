@@ -14,12 +14,16 @@ class RotarySwitch extends React.Component {
 
 	_handleClick(e) {
 		e.preventDefault();
-		this.props.OnClick(this.props.buttonName);
+		this.props.onClick(this.props.buttonName);
 	}
 
 	render() {
+		const offset = -90 * (this.props.value - 1) + "px 0";
+
 		return (
-			<div className="rotary-switch" onClick={(e) => this._handleClick(e)}>
+			<div className="rotary-switch" 
+				style={{backgroundPosition: offset}}
+				onClick={(e) => this._handleClick(e)}>
 				{this.props.value}
 				{this.props.label}
 			</div>

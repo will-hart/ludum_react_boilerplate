@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.2556706"
-     inkscape:cx="-81.370395"
-     inkscape:cy="92.802171"
+     inkscape:cx="-143.87952"
+     inkscape:cy="89.03389"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -72,17 +72,17 @@
        x="0"
        y="902.36218" />
     <circle
-       style="opacity:1;fill:#002b36;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#191f22;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path8660"
        cx="45"
        cy="968.79498"
        r="30.36791" />
     <circle
-       r="22.805824"
-       cy="968.79498"
-       cx="45"
+       cy="969.10083"
+       cx="44.694176"
        id="circle8662"
-       style="opacity:1;fill:#00161b;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#0a0c0e;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       r="22.5" />
     <rect
        y="902.36218"
        x="90"
@@ -95,12 +95,12 @@
        cy="968.79498"
        cx="135"
        id="circle8666"
-       style="opacity:1;fill:#002b36;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#191f22;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <circle
        style="opacity:1;fill:#dc322f;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle8668"
-       cx="135"
-       cy="968.79498"
-       r="22.805824" />
+       cx="134.69418"
+       cy="969.10083"
+       r="22.5" />
   </g>
 </svg>
