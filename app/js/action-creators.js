@@ -1,16 +1,32 @@
-const incrementCounter = () => {
+import {
+  SetValue,
+  ToggleButton,
+  UpdateCondition
+} from "./actions";
+
+const toggleButton = button => {
   return {
-    type: "INCREMENT"
+    type: ToggleButton,
+    button: button
   }
 };
 
-const decrementCounter = () => {
+const setValue = (button, value) => {
   return {
-    type: "DECREMENT"
+    type: SetValue,
+    button: button,
+    value: value
   }
 };
+
+const updateCondition = () => {
+  return {
+    type: UpdateCondition
+  };
+}
 
 export default {
-  incrementCounter,
-  decrementCounter
+  setValue,
+  toggleButton,
+  updateCondition
 };

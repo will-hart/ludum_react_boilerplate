@@ -17,7 +17,7 @@ class Intro extends React.Component {
 	render() {
 		return (
 			<div className="intro-wrapper">
-				<FadeInText text="Last year\'s crop wasn\'t that great" delay={500} />
+				<FadeInText text="Last year's crop wasn't that great" delay={500} />
 				<FadeInText text="and unfortunately we had to let Freddy go..." delay={1500} />
 				<FadeInText text="...from altitude." delay={3500} />
 				<FadeInText text="Dont let the crop die." delay={4500} />
