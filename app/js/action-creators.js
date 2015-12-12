@@ -1,5 +1,5 @@
 import {
-  SetValue,
+  IncrementValue,
   ToggleButton,
   UpdateCondition
 } from "./actions";
@@ -11,9 +11,9 @@ const toggleButton = button => {
   }
 };
 
-const setValue = (button, value) => {
+const incrementValue = (button, value) => {
   return {
-    type: SetValue,
+    type: IncrementValue,
     button: button,
     value: value
   }
@@ -26,7 +26,7 @@ const updateCondition = () => {
 }
 
 export default {
-  setValue,
+  incrementValue,
   toggleButton,
   updateCondition
 };

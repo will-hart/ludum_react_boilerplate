@@ -2,15 +2,30 @@ const storageKey = "ld_react_store";
 
 const initialState = {
   buttons: {
-
+    mainPower: false,
+    battery: false,
+    charge: false,
+    waterPumps: false,
+    nutrientMixer: false,
+    waterFlowRate: 1,
+    illumination: false,
+    heater: false,
+    brightness: 1,
+    nutrientPumps: false,
+    nutrientFlowRate: 1,
+    coolingFan: false,
+    coolingPump: false,
+    coolingFlow: 1,
+    coolingSystem: 1
   },
   condition: {
     health: 100,
-    growth: 0,
-    water: 0,
-    heat: 0,
+    battery: 0,
+    temperature: 0,
+    light: 0,
     food: 0,
-    light: 0
+    water: 0,
+    growth: 0
   }
 }
 

@@ -1,4 +1,13 @@
 import React from "react"
+import {
+	CoolingController,
+	LightController,
+	NutritionController,
+	PowerController,
+	StatusController,
+	TerminalController,
+	WaterController
+} from "../groups";
 
 class Game extends React.Component {
 	constructor(props) {
@@ -8,7 +17,15 @@ class Game extends React.Component {
 	render() {
 		return (
 			<div className="game-wrapper">
-				Game goes here
+				<div className="game-area">
+					<WaterController />
+					<LightController />
+					<NutritionController />
+					<CoolingController />
+					<TerminalController />
+					<StatusController />
+					<PowerController />
+				</div>
 			</div>
 		);
 	}

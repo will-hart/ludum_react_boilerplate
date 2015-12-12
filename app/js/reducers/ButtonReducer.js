@@ -1,5 +1,5 @@
 import {
-  SetValue,
+  IncrementValue,
   ToggleButton
 } from "../actions";
 
@@ -11,20 +11,25 @@ const toggleButton = (state, button) => {
   };
 };
 
-const setValue = (state, button, value) => {
+const incrementValue = (state, button) => {
+  let val = state.buttons[button]++;
+  if (val > 4) {
+    val = 1;
+  }
+
   return {
     ...state.buttons,
-    [button]: value
+    [button]: val
   };
 };
 
 const ButtonReducer = (state, action) => {
   switch(action.type) {
-    case "TOGGLE_BUTTON":
+    case ToggleButton:
       return toggleButton(state, action.button);
 
-    case "SET_VALUE": 
-      return setValue(state, action.button, action.value);
+    case IncrementValue: 
+      return incrementValue(state, action.button);
 
     default:
       return { ...state.buttons };
