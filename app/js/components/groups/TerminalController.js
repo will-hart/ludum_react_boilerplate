@@ -1,24 +1,22 @@
 import React from "react"
 import { connect } from "react-redux";
+
 import {
-	incrementValue,
-	toggleButton
-} from "../../action-creators";
-
-
-import RotarySwitch from "../controls/RotarySwitch";
-import ToggleSwitch from "../controls/ToggleSwitch";
+	Terminal
+} from "../controls";
 
 
 class DumbTerminalController extends React.Component {
 	constructor(props) {
 		super(props)
+
+		this.state.terminalValue={}
 	}
 
 	render() {
 		return (
 			<div className="terminal">
-				Terminal
+				<Terminal value={this.props.terminal} />
 			</div>
 		);
 	}

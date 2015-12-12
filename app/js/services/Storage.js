@@ -25,7 +25,8 @@ const initialState = {
     light: 0,
     food: 0,
     water: 0,
-    growth: 0
+    growth: 0,
+    terminal: ""
   }
 }
 
