@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="180"
+   height="150"
+   viewBox="0 0 180 150"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91pre3 r13670"
+   sodipodi:docname="vertical_labels.svg"
+   inkscape:export-filename="G:\Code\ld34\app\assets\images\vertical_labels.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.5591041"
+     inkscape:cx="-3.6149199"
+     inkscape:cy="54.443228"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4136"
+       empspacing="1"
+       spacingy="150px"
+       spacingx="30px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     sodipodi:insensitive="true">
+    <rect
+       transform="translate(0,-902.36214)"
+       style="opacity:1;fill:#586e75;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4138"
+       width="180"
+       height="150"
+       x="0"
+       y="902.36212"
+       inkscape:export-filename="G:\Code\ld34\app\assets\images\vertical_labels.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-902.36214)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:157.5px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;text-anchor:middle;opacity:1;fill:#93a1a1;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="0"
+       y="1052.3622"
+       id="text4140"><tspan
+         sodipodi:role="line"
+         id="tspan4142"
+         x="0"
+         y="1052.3622" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="16.481121"
+       y="977.20209"
+       id="text4144"><tspan
+         sodipodi:role="line"
+         id="tspan4146"
+         x="977.20209"
+         y="16.481121"
+         style="fill:#161919;fill-opacity:1;">LIGHTS</tspan></text>
+    <text
+       id="text4150"
+       y="977.20209"
+       x="46.551334"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#161919;fill-opacity:1;"
+         y="46.551334"
+         x="977.20209"
+         id="tspan4152"
+         sodipodi:role="line">WATER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="76.633118"
+       y="977.20209"
+       id="text4154"><tspan
+         sodipodi:role="line"
+         id="tspan4156"
+         x="977.20209"
+         y="76.633118"
+         style="fill:#161919;fill-opacity:1;">FOOD</tspan></text>
+    <text
+       id="text4158"
+       y="977.20209"
+       x="106.7149"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#161919;fill-opacity:1;"
+         y="106.7149"
+         x="977.20209"
+         id="tspan4160"
+         sodipodi:role="line">Cooling</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="136.80824"
+       y="977.20209"
+       id="text4162"><tspan
+         sodipodi:role="line"
+         id="tspan4164"
+         x="977.20209"
+         y="136.80824"
+         style="fill:#161919;fill-opacity:1;">STATUS</tspan></text>
+    <text
+       id="text4166"
+       y="977.20209"
+       x="166.87846"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:23.13507271px;font-family:'Terminator Two';-inkscape-font-specification:'Terminator Two Thin';text-align:center;writing-mode:tb-rl;text-anchor:middle;opacity:1;fill:#161919;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#161919;fill-opacity:1;"
+         y="166.87846"
+         x="977.20209"
+         id="tspan4168"
+         sodipodi:role="line">POWER</tspan></text>
+  </g>
+</svg>

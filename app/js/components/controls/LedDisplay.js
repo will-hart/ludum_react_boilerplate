@@ -18,7 +18,6 @@ class LedDisplay extends React.Component {
 
 		return (
 			<div className={classes}>
-				{this.props.isOn === true ? "ON" : "OFF"}
 				{this.props.label}
 			</div>
 		);

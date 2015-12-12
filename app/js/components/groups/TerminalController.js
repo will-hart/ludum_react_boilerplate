@@ -9,14 +9,12 @@ import {
 class DumbTerminalController extends React.Component {
 	constructor(props) {
 		super(props)
-
-		this.state.terminalValue={}
 	}
 
 	render() {
 		return (
 			<div className="terminal">
-				<Terminal value={this.props.terminal} />
+				<Terminal value={this.props.condition.terminal} />
 			</div>
 		);
 	}

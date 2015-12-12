@@ -18,10 +18,6 @@ class ToggleSwitch extends React.Component {
 		this.props.onClick(this.props.buttonName);
 	}
 
-	_getValue() {
-		return this.props.isOn === true ? "ON" : "OFF";
-	}
-
 	render() {
 		let classes = "toggle-switch";
 		if (this.props.isOn) {
@@ -30,7 +26,6 @@ class ToggleSwitch extends React.Component {
 
 		return (
 			<div className={classes} onClick={(e) => this._handleClick(e)}>
-			  {this._getValue()}
 				{this.props.label}
 			</div>
 		);

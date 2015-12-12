@@ -21,7 +21,7 @@ class DumbCoolingController extends React.Component {
 	render() {
 		return (
 			<div className="control-group">
-				<VerticalLabel label="Cooling" />
+				<VerticalLabel label="Cooling" backgroundOffset="-90px" />
 				<ToggleSwitch label="Fan" buttonName="coolingFan" isOn={this.props.buttons.coolingFan} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Pump" buttonName="coolingPump" isOn={this.props.buttons.coolingPump} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="coolingFlow" value={this.props.buttons.coolingFlow} onClick={this.props.onIncrementValue} />

@@ -10,14 +10,12 @@ class LedBarGraph extends React.Component {
 		super(props)
 	}
 
-	_getValue() {
-		return Math.floor(10 * this.props.value / 100);
-	}
-
 	render() {
+		let offset = Math.floor(this.props.value / 10);
+		offset = -59 * Math.min(9, Math.max(offset, 0));
+
 		return (
-			<div className="led-bar-graph">
-				{this._getValue()}
+			<div className="led-bar-graph" style={{backgroundPosition: offset}}>
 				{this.props.label}
 			</div>
 		);

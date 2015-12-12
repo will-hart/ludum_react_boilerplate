@@ -20,8 +20,8 @@ const initialState = {
   },
   condition: {
     health: 100,
-    battery: 0,
-    temperature: 0,
+    battery: 50,
+    temperature: 10,
     light: 0,
     food: 0,
     water: 0,

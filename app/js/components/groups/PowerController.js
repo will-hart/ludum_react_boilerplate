@@ -19,7 +19,7 @@ class DumbPowerController extends React.Component {
 	render() {
 		return (
 			<div className="control-group">
-				<VerticalLabel label="Power" />
+				<VerticalLabel label="Power"  backgroundOffset="-150px" />
 				<ToggleSwitch label="Main" buttonName="mainPower" isOn={this.props.buttons.mainPower} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Battery" buttonName="battery" isOn={this.props.buttons.battery} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Charge" buttonName="charge" isOn={this.props.buttons.charge} onClick={this.props.onToggleButton} />

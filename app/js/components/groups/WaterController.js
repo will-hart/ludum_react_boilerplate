@@ -21,7 +21,7 @@ class DumbWaterController extends React.Component {
 	render() {
 		return (
 			<div className="control-group">
-				<VerticalLabel label="Water" />
+				<VerticalLabel label="Water" backgroundOffset="-30px" />
 				<ToggleSwitch label="Pump" buttonName="waterPumps" isOn={this.props.buttons.waterPumps} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Nutr. Mix" buttonName="nutrientMixer" isOn={this.props.buttons.nutrientMixer} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="waterFlowRate" value={this.props.buttons.waterFlowRate} onClick={this.props.onIncrementValue} />
