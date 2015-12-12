@@ -49,8 +49,5 @@
     "lint": "eslint app",
     "validate": "npm ls",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register test/**/*.js"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  }
 }
