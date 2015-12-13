@@ -52,6 +52,10 @@ const updateSystemTemperature = (state) => {
 		return clamp(temp - 0.03);
 	}
 
+	if (state.buttons.charge && state.buttons.mainPower && state.condition.battery > 95) {
+		temp += 0.1;
+	}
+
 	if (state.buttons.waterPump) {
 		temp += 0.1;
 	}

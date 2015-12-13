@@ -8,7 +8,7 @@ const updateGrowth = (state) => {
 	if (state.condition.light > 30 && 
 		state.condition.food > 30 && 
 		state.condition.water > 30) {
-		delta += 0.325;
+		delta += 0.35;
 	}
 
 	return clamp(state.condition.growth + delta);

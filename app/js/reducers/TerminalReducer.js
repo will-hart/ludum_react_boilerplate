@@ -56,11 +56,11 @@ const growthMessage = (state) => {
 };
 
 const plantCondition = (state) => {
-	let health = "HEALTHY";
+	let health = "HEALTHY CONDITION";
 	if (state.condition.health < 30) { 
-		health = "POOR OVERALL";
+		health = "POOR CONDITION";
 	} else if (state.condition.health < 70) {
-		health = "FAIR OVERALL";
+		health = "FAIR CONDITION";
 	}
 
 	if (state.condition.water < 30) {
