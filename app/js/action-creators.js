@@ -1,9 +1,16 @@
 import {
+  GameTick,
   IncrementValue,
   NewGame,
   ToggleButton,
   UpdateCondition
 } from "./actions";
+
+const tickGame = () => {
+  return {
+    type: GameTick
+  }
+};
 
 const incrementValue = (button, value) => {
   return {
@@ -33,6 +40,7 @@ const updateCondition = () => {
 }
 
 export default {
+  tickGame,
   incrementValue,
   newGame,
   toggleButton,

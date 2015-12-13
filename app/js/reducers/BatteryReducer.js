@@ -4,7 +4,7 @@ const clamp = (value) => {
 
 const updateBattery = (state) => {
 	if (state.buttons.charge && state.buttons.mainPower) {
-		return state.condition.battery + 1;
+		return clamp(state.condition.battery + 1);
 	}
 
 	if (state.buttons.battery && !state.buttons.mainPower) {

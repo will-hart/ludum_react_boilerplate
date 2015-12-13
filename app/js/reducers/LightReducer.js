@@ -3,13 +3,16 @@ const clamp = (value) => {
 };
 
 const updateLight = (state) => {
-	let delta = -0.1;
+	let delta = -3.1;
 
-	if (state.condition.temperature.light >= 70) {
-		delta -= 1;
+	if (state.condition.temperature.light >= 80) {
+		delta -= 5;
 	} else {
-
 		if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+			if (state.buttons.illumination || state.buttons.heater) {
+				delta += 3.1;
+			}
+
 			if (state.buttons.illumination) {
 				delta += state.buttons.brightness * 0.1;
 			}

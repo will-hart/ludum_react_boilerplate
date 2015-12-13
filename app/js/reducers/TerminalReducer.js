@@ -5,12 +5,17 @@ const introMessage = `
 	\u2000
 `;
 
-const terminalStatusLine = (item, value, heating = 0) => {
+const terminalStatusLine = (item, value, heating) => {
 	let status = "LOW";
 	if (value > 70) {
 		status = "OVER";
 	}	else if (value > 30) {
 		status = "OK";
+	}
+
+	let heat = "HOT";
+	if (heating > 80) {
+		heat = "OFF";
 	}
 
 	const itemPadding = 5 - item.length;
@@ -19,7 +24,7 @@ const terminalStatusLine = (item, value, heating = 0) => {
 	return "\u2000".repeat(4) + 
 		item + ":" + "\u2000".repeat(itemPadding) + 
 		status + "\u2000".repeat(statusPadding) + 
-		(heating > 70 ? "HOT" : "\u2000".repeat(3));
+		(heating > 70 ? heat : "\u2000".repeat(3));
 };
 
 const batteryMessage = (state) => {
@@ -71,6 +76,13 @@ const plantCondition = (state) => {
 	}
 
 	return health;
+};
+
+const timeRemaining = (state) => {
+	const weeks = Math.floor(state.victory.timeRemaining / 7);
+
+	return `\u2000
+\u2000\u2000\u2000${weeks} WEEKS TO HARVEST`;
 }
 
 const updateTerminal = (state) => {
@@ -90,7 +102,8 @@ const updateTerminal = (state) => {
 		systemMessage(state) +
 		growthMessage(state) + "\n\u2000\n" +
 		`\u2000\u2000\u2000PLANT CONDITION:\n\u2000\u2000\u2000\u2000` +
-		plantCondition(state);
+		plantCondition(state) + "\n" + 
+		timeRemaining(state);
 
 	return term;
 };

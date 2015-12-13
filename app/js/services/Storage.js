@@ -35,7 +35,9 @@ const initialState = {
   },
   victory: {
     finished: false,
-    won: false
+    won: false,
+    message: "",
+    timeRemaining: 180
   }
 }
 

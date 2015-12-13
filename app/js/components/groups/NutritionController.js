@@ -22,15 +22,15 @@ class DumbNutritionController extends React.Component {
 	render() {
 		let isActive = this.props.buttons.mainPower || 
 			(this.props.buttons.battery && this.props.condition.battery > 0);
-		isActive = isActive && this.props.condition.temperature.food < 70;
+		isActive = isActive && this.props.condition.temperature.food < 80;
 
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Nutrients" backgroundOffset="-60px" />
+				<LedDisplay label="Power" isOn={isActive} />
 				<Spacer />
 				<ToggleSwitch label="Pump" buttonName="nutrientPumps" isOn={this.props.buttons.nutrientPumps} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="nutrientFlowRate" value={this.props.buttons.nutrientFlowRate} onClick={this.props.onIncrementValue} />
-				<LedDisplay label="Power" isOn={isActive} />
 			</div>
 		);
 	}

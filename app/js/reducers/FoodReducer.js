@@ -3,14 +3,14 @@ const clamp = (value) => {
 };
 
 const updateFood = (state) => {
-	let delta = -0.1;
+	let delta = -3.1;
 
-	if (state.condition.temperature.food >= 70) {
-		delta -= 1;
+	if (state.condition.temperature.food >= 80) {
+		delta -= 5;
 	} else {
 		if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
-			if (state.buttons.nutrientMixer &&
-				state.buttons.nutrientPumps) {
+			if (state.buttons.nutrientMixer && state.buttons.nutrientPumps) {
+				delta += 3.1;
 				delta += state.buttons.nutrientFlowRate * 0.2;
 			}
 		}

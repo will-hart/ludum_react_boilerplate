@@ -21,15 +21,15 @@ class DumbLightController extends React.Component {
 	render() {
 		let isActive = this.props.buttons.mainPower || 
 			(this.props.buttons.battery && this.props.condition.battery > 0);
-		isActive = isActive && this.props.condition.temperature.light < 70;
+		isActive = isActive && this.props.condition.temperature.light < 80;
 
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Light"  backgroundOffset="0px" />
+				<LedDisplay label="Power" isOn={isActive} />
 				<ToggleSwitch label="Lights" buttonName="illumination" isOn={this.props.buttons.illumination} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Brightness" buttonName="brightness" value={this.props.buttons.brightness} onClick={this.props.onIncrementValue} />
 				<ToggleSwitch label="Heat" buttonName="heater" isOn={this.props.buttons.heater} onClick={this.props.onToggleButton} />
-				<LedDisplay label="Power" isOn={isActive} />
 			</div>
 		);
 	}

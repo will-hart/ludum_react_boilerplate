@@ -7,9 +7,6 @@ import {
 
 
 class DumbTerminalController extends React.Component {
-	constructor(props) {
-		super(props)
-	}
 
 	render() {
     const isOn = this.props.condition.terminal.length !== 0;

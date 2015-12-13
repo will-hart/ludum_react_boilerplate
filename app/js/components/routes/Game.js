@@ -14,6 +14,7 @@ import EndView from "../common/EndView";
 import Help from "../common/Help";
 
 import {
+	tickGame,
 	updateCondition
 } from "../../action-creators";
 
@@ -32,10 +33,15 @@ class DumbGame extends React.Component {
 
 	componentDidMount() {
 		this.updateTimer = setInterval(this._update.bind(this), GameUpdateRate);
+		this.gameTimer = setInterval(this._gameTick.bind(this), 1000);
 	}
 
 	componentWillUnmount() {
 		clearTimeout(this.updateTimer);
+	}
+
+	_gameTick() {
+		this.props.onGameTick();
 	}
 
 	_update() {
@@ -48,6 +54,7 @@ class DumbGame extends React.Component {
 			helpVisible: true
 		});
 		clearTimeout(this.updateTimer);
+		clearTimeout(this.gameTimer);
 	}
 
 	_hideHelp(e) {
@@ -55,12 +62,14 @@ class DumbGame extends React.Component {
 		this.setState({
 			helpVisible: false
 		});
-		this.updateTimer = setInterval(this._update.bind(this), 500);
+		this.updateTimer = setInterval(this._update.bind(this), GameUpdateRate);
+		this.gameTimer = setInterval(this._gameTick.bind(this), 1000);
 	}
 
 	_getGameView() {
 		if (this.props.victory.finished) {
 			clearTimeout(this.updateTimer);
+			clearTimeout(this.gameTimer);
 			return (
 				<EndView victory={this.props.victory} />
 			);
@@ -111,6 +120,7 @@ const mapDispatchToProps = (
   containerProps
 ) => {
   return {
+  	onGameTick: () => dispatch(tickGame()),
     onUpdateCondition: () => dispatch(updateCondition())
   };
 };

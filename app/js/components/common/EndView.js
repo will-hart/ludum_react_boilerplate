@@ -20,9 +20,9 @@ class EndView extends React.Component {
 
 		return (
 			<div className="victory-screen">
-				<h1>Game Over</h1>
-
 				<h3 className={endClass}>{this.props.victory.won ? "YOU WON" : "YOU LOST"}</h3>
+
+				<p>{this.props.victory.message.length > 0 ? this.props.victory.message : " "}</p>
 
 				<button className="victory-button" onClick={(e) => this._onEndGame(e)}>Start Again</button>
 			</div>
