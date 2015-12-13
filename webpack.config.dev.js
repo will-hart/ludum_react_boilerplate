@@ -40,6 +40,9 @@ module.exports = {
     }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
       loader: 'file?name=images/[hash].[ext]'
+    }, {
+      test: /\.(mp3|ogg)$/,
+      loader: 'file?name=audio/[hash].[ext]'
     }]
   }
 };

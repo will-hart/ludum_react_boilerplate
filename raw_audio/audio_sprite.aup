@@ -1,7 +1,11 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
-<project xmlns="http://audacity.sourceforge.net/xml/" projname="audio_sprite_data" version="1.3.0" audacityversion="2.0.5" sel0="2.4366823740" sel1="2.4366823740" vpos="0" h="0.0000000000" zoom="112.4479755421" rate="44100.0">
-	<tags/>
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="audio_sprite_data" version="1.3.0" audacityversion="2.0.5" sel0="1.4242808593" sel1="1.4242808593" vpos="0" h="0.0000000000" zoom="413.5416666667" rate="44100.0">
+	<tags>
+		<tag name="TITLE" value="LD34 Sound Sprite"/>
+		<tag name="YEAR" value="2015"/>
+		<tag name="ARTIST" value="wilsk"/>
+	</tags>
 	<wavetrack name="bass_thump" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="40951">
@@ -9,7 +13,34 @@
 					<simpleblockfile filename="e0000efd.au" len="40951" min="-0.692433" max="0.730137" rms="0.077843"/>
 				</waveblock>
 			</sequence>
-			<envelope numpoints="0"/>
+			<envelope numpoints="2">
+				<controlpoint t="0.391292060065" val="0.708333313465"/>
+				<controlpoint t="0.691430856138" val="0.347222208977"/>
+			</envelope>
+		</waveclip>
+		<waveclip offset="0.96638936">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="4323">
+				<waveblock start="0">
+					<simpleblockfile filename="e00008b7.au" len="4323" min="-0.315977" max="0.328969" rms="0.008974"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.040782596315" val="0.625000000000"/>
+				<controlpoint t="0.040787596315" val="0.305555552244"/>
+				<controlpoint t="0.053275615872" val="0.333333343267"/>
+				<controlpoint t="0.054670147335" val="0.625000000000"/>
+			</envelope>
+		</waveclip>
+		<waveclip offset="1.12926952">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="13010">
+				<waveblock start="0">
+					<simpleblockfile filename="e000094b.au" len="13010" min="-0.315817" max="0.316228" rms="0.072284"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.014508816121" val="0.208333328366"/>
+				<controlpoint t="0.058035264484" val="0.236111104488"/>
+			</envelope>
 		</waveclip>
 	</wavetrack>
 	<wavetrack name="bass_thump" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
@@ -19,7 +50,34 @@
 					<simpleblockfile filename="e0000e18.au" len="40951" min="-0.692433" max="0.730137" rms="0.077659"/>
 				</waveblock>
 			</sequence>
-			<envelope numpoints="0"/>
+			<envelope numpoints="2">
+				<controlpoint t="0.391292060065" val="0.708333313465"/>
+				<controlpoint t="0.691430856138" val="0.347222208977"/>
+			</envelope>
+		</waveclip>
+		<waveclip offset="0.96638936">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="4323">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000bbb.au" len="4323" min="-0.315977" max="0.328969" rms="0.009003"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.040782596315" val="0.625000000000"/>
+				<controlpoint t="0.040787596315" val="0.305555552244"/>
+				<controlpoint t="0.053275615872" val="0.333333343267"/>
+				<controlpoint t="0.054670147335" val="0.625000000000"/>
+			</envelope>
+		</waveclip>
+		<waveclip offset="1.12926952">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="13010">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000365.au" len="13010" min="-0.313588" max="0.311734" rms="0.066034"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.014508816121" val="0.208333328366"/>
+				<controlpoint t="0.058035264484" val="0.236111104488"/>
+			</envelope>
 		</waveclip>
 	</wavetrack>
 </project>

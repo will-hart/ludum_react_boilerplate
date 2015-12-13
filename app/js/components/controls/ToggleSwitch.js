@@ -1,5 +1,8 @@
 import React from "react"
 
+import AudioPlayer from "../../services/AudioPlayer";
+
+
 class ToggleSwitch extends React.Component {
 	static propTypes = {
 		buttonName: React.PropTypes.string.isRequired,
@@ -9,12 +12,15 @@ class ToggleSwitch extends React.Component {
 	}
 
 	constructor(props) {
-		super(props)
+		super(props);
+
+		this.audio = new AudioPlayer();
 	}
 
 	_handleClick(e) {
 		e.preventDefault();
 		this.props.onClick(this.props.buttonName);
+		this.audio.play("toggleswitch");
 	}
 
 	render() {

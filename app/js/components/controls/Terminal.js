@@ -1,5 +1,8 @@
 import React from "react"
 
+import AudioPlayer from "../../services/AudioPlayer";
+
+
 class Terminal extends React.Component {
 
 	static propTypes = {
@@ -7,7 +10,15 @@ class Terminal extends React.Component {
 	}
 
 	constructor(props) {
-		super(props)
+		super(props);
+
+		this.audio = new AudioPlayer();
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (this.props.value.length === 0 && nextProps.value.length > 0) {
+			this.audio.play("computerstart");
+		}
 	}
 
 	_getValue() {
