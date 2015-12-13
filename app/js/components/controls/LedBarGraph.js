@@ -4,7 +4,8 @@ class LedBarGraph extends React.Component {
 	static propTypes = {
 		label: React.PropTypes.string.isRequired,
 		value: React.PropTypes.number.isRequired, 
-		ledOn: React.PropTypes.bool.isRequired
+		ledOn: React.PropTypes.bool.isRequired,
+		powered: React.PropTypes.bool.isRequired
 	}
 
 	constructor(props) {
@@ -12,9 +13,12 @@ class LedBarGraph extends React.Component {
 	}
 
 	render() {
-		let offset = Math.floor(this.props.value / 10);
-		offset = (-59 * Math.min(10, Math.max(offset, 0))) + "px" + 
-			(this.props.ledOn ? " -150px" : " 0");
+		let offsetVal = Math.floor(this.props.value / 10);
+		const xOffset = this.props.powered ? (-59 * Math.min(10, Math.max(offsetVal, 0))) : 0;
+		const yOffset = (this.props.ledOn && this.props.powered) ? "-150px" : "0px";
+		const offset = xOffset + "px " + yOffset;
+
+		console.log(offset);
 
 		return (
 			<div className="led-bar-graph" style={{backgroundPosition: offset}}>
