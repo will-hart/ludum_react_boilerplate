@@ -12,8 +12,7 @@ const CoreReducer = (state = storage.load(), action) => {
   let newState = {};
 
   switch (action.type) {
-    case NewGame: 
-      console.log("New Game");
+    case NewGame:
       newState = { ...initialState };
       break;
 
