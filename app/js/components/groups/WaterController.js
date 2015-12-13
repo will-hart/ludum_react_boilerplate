@@ -8,6 +8,7 @@ import {
 import {
 	LedDisplay,
 	RotarySwitch,
+	Spacer,
 	ToggleSwitch,
 	VerticalLabel
 } from "../controls";
@@ -27,8 +28,8 @@ class DumbWaterController extends React.Component {
 			<div className="control-group">
 				<VerticalLabel label="Water" backgroundOffset="-30px" />
 				<LedDisplay label="Power" isOn={isActive} />
+				<Spacer />
 				<ToggleSwitch label="Pump" buttonName="waterPumps" isOn={this.props.buttons.waterPumps} onClick={this.props.onToggleButton} />
-				<ToggleSwitch label="Nutr. Mix" buttonName="nutrientMixer" isOn={this.props.buttons.nutrientMixer} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="waterFlowRate" value={this.props.buttons.waterFlowRate} onClick={this.props.onIncrementValue} />
 			</div>
 		);

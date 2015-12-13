@@ -46,6 +46,31 @@ class Help extends React.Component {
 				When the "grow" LED is on, turn everything off to start the harvest.
 			</p>
 
+			<h3>What do all the buttons do?</h3>
+
+			<p>
+				Water - Pump: Turns on the water pump to the plants.  <br/>
+				Water - Flow Rate: sets the rate of water flow to the plants (higher is more water but generates more heat).
+			</p>
+
+			<p>
+				Lights - Lights - turns on the lights. <br/>
+				Lights - Brightness - sets the intensity of the lights.  <br/>
+				Lights - Heat - turns on the heater functionality of the light (aids photosynthesis but generates more heat).
+			</p>
+
+			<p>
+				Food - Mixer - mixes nutrients into the water supply.  <br/>
+				Food - Pump - supplies nutrients to the mixer.  <br/>
+				Food - Flow Rate - sets how fast nutrients should flow to the plants.
+			</p>
+
+			<p>
+				Cooling - Fan - turns on air cooling.  <br/>
+				Cooling - Pump - turns on the pump for water cooling.  <br/>
+				Cooling - Flow Rate - sets how fast the water is supplied to the cooling pump.  <br/>
+				Cooling - Location - sets the destination of cooling air and water.
+			</p>
 			<p>
 				<a href="#" onClick={(e) => this._onClose(e)}>Close</a>
 			</p>
@@ -59,7 +84,7 @@ class Help extends React.Component {
 					HELP?! You want help???
 				</p>
 				<p>
-					<a className="nope" href="#" onClick={(e) => this._onShowHelp(e)}>Yes, I'm weak, but I want to grow strong</a>
+					<a className="nope" href="#" onClick={(e) => this._onShowHelp(e)}>Yes, I've no idea what is going on here</a>
 					<br/>
 					<a href="#" onClick={(e) => this._onClose(e)}>No, what made you think I need help?</a>
 				</p>

@@ -28,9 +28,9 @@ class DumbNutritionController extends React.Component {
 			<div className="control-group">
 				<VerticalLabel label="Nutrients" backgroundOffset="-60px" />
 				<LedDisplay label="Power" isOn={isActive} />
-				<Spacer />
 				<ToggleSwitch label="Pump" buttonName="nutrientPumps" isOn={this.props.buttons.nutrientPumps} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="nutrientFlowRate" value={this.props.buttons.nutrientFlowRate} onClick={this.props.onIncrementValue} />
+				<ToggleSwitch label="Mixer" buttonName="nutrientMixer" isOn={this.props.buttons.nutrientMixer} onClick={this.props.onToggleButton} />
 			</div>
 		);
 	}
