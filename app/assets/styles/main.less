@@ -90,16 +90,22 @@ div,
 			background: #333;
 		}
 	}
+}
 
-	a.helper-link {
-		font-size: 1.1em;
-		position: fixed;
-		bottom: 5px;
-		right: 5px;
-		color: #555 !important;
-		text-decoration: none;
+.victory-button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1em;
+	cursor: pointer;
+	margin-top: 3em;
+	padding: 0.4em 0.8em;
+	border: 1px solid #8C979B;
+
+	&:hover {
+		border: 1px solid #666;
+		background: #798285;
 	}
-
 }
 
 a.helper-link {
@@ -107,7 +113,7 @@ a.helper-link {
 	position: fixed;
 	bottom: 5px;
 	right: 5px;
-	color: #111 !important;
+	color: #666 !important;
 	text-decoration: none;
 }
 
@@ -132,13 +138,30 @@ a.helper-link {
 }
 
 .game-wrapper {
-	.game-area {
+	.game-area, .victory-screen {
 		background: #8C979B;
 		display: flex;
 		flex-flow: column wrap;
 		width: 800px;
 		height: 610px;
 		color: white;
+	}
+}
+
+.victory-screen {
+	color: #444 !important;
+	justify-content: center;
+	align-content: center;
+	align-items:center;
+
+	& >.won {
+		font-size: 3em;
+		color: #1F8643;
+	}
+
+	& > .lost {
+		font-size: 3em;
+		color: #BF3939;
 	}
 }
 

@@ -1,6 +1,9 @@
 import ButtonReducer from "./ButtonReducer";
 import ConditionReducer from "./ConditionReducer";
-import Storage from "../services/Storage";
+import VictoryReducer from "./VictoryReducer";
+import { initialState, Storage } from "../services/Storage";
+import { NewGame } from "../actions";
+
 const storage = new Storage();
 
 
@@ -9,11 +12,17 @@ const CoreReducer = (state = storage.load(), action) => {
   let newState = {};
 
   switch (action.type) {
+    case NewGame: 
+      console.log("New Game");
+      newState = { ...initialState };
+      break;
+
     default:
       newState = {
         ...state,
         buttons: ButtonReducer(state, action),
-        condition: ConditionReducer(state, action)
+        condition: ConditionReducer(state, action),
+        victory: VictoryReducer(state, action)
       };
   }
 

@@ -10,7 +10,7 @@ import {
 	TerminalController,
 	WaterController
 } from "../groups";
-
+import EndView from "../common/EndView";
 import Help from "../common/Help";
 
 import {
@@ -56,18 +56,31 @@ class DumbGame extends React.Component {
 		this.updateTimer = setInterval(this._update.bind(this), 500);
 	}
 
-	render() {
+	_getGameView() {
+		if (this.props.victory.finished) {
+			return (
+				<EndView victory={this.props.victory} />
+			);
+		}
+
 		return (
-			<div className="game-wrapper">
-				<div className="game-area">
-					<WaterController />
-					<LightController />
-					<NutritionController />
-					<CoolingController />
-					<TerminalController />
-					<StatusController />
-					<PowerController />
-				</div>
+			<div className="game-area">
+				<WaterController />
+				<LightController />
+				<NutritionController />
+				<CoolingController />
+				<TerminalController />
+				<StatusController />
+				<PowerController />
+			</div>
+		);
+	}
+
+	render() {
+
+		return (
+			<div className="game-wrapper">					
+				{this._getGameView()}
 
 				<a href="#" className="helper-link" onClick={(e) => this._showHelp(e)}>
 					Help
@@ -85,7 +98,8 @@ const mapStateToProps = (
 ) => {
   return {
     buttons: state.buttons,
-    condition: state.condition
+    condition: state.condition,
+    victory: state.victory
   };
 };
 

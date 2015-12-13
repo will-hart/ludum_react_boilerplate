@@ -1,11 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import router from "../../router";
+import {
+	newGame
+} from "../../action-creators";
 
 import AudioPlayer from "../../services/AudioPlayer";
 import FadeInText from "../common/FadeInText";
 
 
-class Intro extends React.Component {
+class DumbIntro extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -34,6 +38,7 @@ class Intro extends React.Component {
 
 	_startGame(e) {
 		e.preventDefault();
+		this.props.onNewGame();
 		router.transitionTo("game");
 	}
 
@@ -58,7 +63,7 @@ class Intro extends React.Component {
 				<FadeInText text={
 					<button className="game-start-button" onClick={(e) => this._startGame(e)}>
 						Start {'\u21A0'}
-					</button>} delay={18500} />
+					</button>} delay={20500} />
 
 					<a href="#" className="helper-link" onClick={(e) => this._startGame(e)}>
 						Skip Intro
@@ -68,4 +73,24 @@ class Intro extends React.Component {
 	}
 }
 
+const mapStateToProps = (
+  state,
+  containerProps
+) => {
+  return {};
+};
+
+const mapDispatchToProps = (
+  dispatch,
+  containerProps
+) => {
+  return {
+    onNewGame: () => dispatch(newGame())
+  };
+};
+
+const Intro =
+  connect(mapStateToProps, mapDispatchToProps)(DumbIntro);
+
 export default Intro;
+    

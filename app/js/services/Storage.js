@@ -1,4 +1,4 @@
-const storageKey = "ld_react_store";
+const storageKey = "ld34_react_store";
 
 const initialState = {
   buttons: {
@@ -33,6 +33,10 @@ const initialState = {
     water: 0,
     growth: 0,
     terminal: ""
+  },
+  victory: {
+    finished: false,
+    won: false
   }
 }
 
@@ -78,4 +82,7 @@ class Storage {
   }
 }
 
-export default Storage;
+export {
+  initialState,
+  Storage
+};
