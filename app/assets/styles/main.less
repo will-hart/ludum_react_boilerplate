@@ -70,7 +70,7 @@ div,
 		opacity: 0;
 		color: #CCC;
 		animation-name: fade;
-		animation-duration: 3s;
+		animation-duration: 2s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease-in;
 		animation-fill-mode: forwards;
@@ -82,7 +82,7 @@ div,
 		color: white;
 		font-size: 2em;
 		cursor: pointer;
-		padding: 0.8em;
+		padding: 0.4em 0.8em;
 		border: 1px solid #222;
 
 		&:hover {
@@ -96,7 +96,7 @@ div,
 		position: fixed;
 		bottom: 5px;
 		right: 5px;
-		color: #111 !important;
+		color: #555 !important;
 		text-decoration: none;
 	}
 
@@ -109,6 +109,26 @@ a.helper-link {
 	right: 5px;
 	color: #111 !important;
 	text-decoration: none;
+}
+
+.help-wrapper {
+	position: fixed;
+	width: 90%;
+	height: 90%;
+	top: 2%;
+	left: 2%;
+	background: white;
+	padding: 3%;
+
+	& a.nope:hover {
+		color: white;
+		text-decoration: none;
+	}
+
+	& p {
+		font-family: 'VT323', monospace;
+		font-size: 1.3em;
+	}
 }
 
 .game-wrapper {

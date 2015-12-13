@@ -11,6 +11,8 @@ import {
 	WaterController
 } from "../groups";
 
+import Help from "../common/Help";
+
 import {
 	updateCondition
 } from "../../action-creators";
@@ -22,6 +24,8 @@ class DumbGame extends React.Component {
 		this.state = {
 			helpVisible: false
 		};
+
+		this._hideHelp = this._hideHelp.bind(this);
 	}
 
 	componentDidMount() {
@@ -36,6 +40,22 @@ class DumbGame extends React.Component {
  		this.props.onUpdateCondition();
 	}
 
+	_showHelp(e) {
+		e.preventDefault();
+		this.setState({
+			helpVisible: true
+		});
+		clearTimeout(this.updateTimer);
+	}
+
+	_hideHelp(e) {
+		e.preventDefault();
+		this.setState({
+			helpVisible: false
+		});
+		this.updateTimer = setInterval(this._update.bind(this), 500);
+	}
+
 	render() {
 		return (
 			<div className="game-wrapper">
@@ -47,11 +67,13 @@ class DumbGame extends React.Component {
 					<TerminalController />
 					<StatusController />
 					<PowerController />
-			</div>
+				</div>
 
-			<a href="#" className="helper-link" onClick={(e) => this._showHelp(e)}>
-				Help
-			</a>
+				<a href="#" className="helper-link" onClick={(e) => this._showHelp(e)}>
+					Help
+				</a>
+
+				{this.state.helpVisible === true ? <Help onClose={this._hideHelp} /> : " "}
 			</div>
 		);
 	}
