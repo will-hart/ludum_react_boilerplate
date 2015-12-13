@@ -7,8 +7,11 @@ const introMessage = `
 
 const terminalStatusLine = (item, value, heating = 0) => {
 	let status = "LOW";
-	if (value > 30) status = "OK";
-	if (value > 70) status = "OVER";
+	if (value > 70) {
+		status = "OVER";
+	}	else if (value > 30) {
+		status = "OK";
+	}
 
 	const itemPadding = 5 - item.length;
 	const statusPadding = 5 - status.length;
@@ -44,7 +47,26 @@ const growthMessage = (state) => {
 };
 
 const plantCondition = (state) => {
-	return "OK";
+	let health = "HEALTHY";
+	if (state.condition.health < 30) { 
+		health = "POOR OVERALL";
+	} else if (state.condition.health < 70) {
+		health = "FAIR OVERALL";
+	}
+
+	if (state.condition.water < 30) {
+		health += "\n\u2000\u2000\u2000\u2000DEHYDRATED";
+	}
+
+	if (state.condition.light < 30) {
+		health += "\n\u2000\u2000\u2000\u2000NO PHOYOSYNTHESIS";
+	}
+
+	if (state.condition.food < 30) {
+		health += "\n\u2000\u2000\u2000\u2000NO FOOD";
+	}
+
+	return health;
 }
 
 const updateTerminal = (state) => {
@@ -63,7 +85,7 @@ const updateTerminal = (state) => {
 		foodMessage(state) + "\n" +
 		systemMessage(state) +
 		growthMessage(state) + "\n\u2000\n" +
-		`\u2000\u2000\u2000PLANT CONDITION:\n\u2000\u2000\u2000` +
+		`\u2000\u2000\u2000PLANT CONDITION:\n\u2000\u2000\u2000\u2000` +
 		plantCondition(state);
 
 	return term;
