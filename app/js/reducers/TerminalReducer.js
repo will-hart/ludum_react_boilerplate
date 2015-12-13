@@ -66,6 +66,10 @@ const plantCondition = (state) => {
 		health += "\n\u2000\u2000\u2000\u2000NO FOOD";
 	}
 
+	if (state.condition.growth >= 70) {
+		health += "\n\u2000\u2000\u2000\u2000READY FOR HARVEST (TURN OFF TO HARVEST)";
+	}
+
 	return health;
 }
 
