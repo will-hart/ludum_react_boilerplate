@@ -7,15 +7,16 @@ const updateLight = (state) => {
 
 	if (state.condition.temperature.light >= 70) {
 		delta -= 1;
-	}
+	} else {
 
-	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
-		if (state.buttons.illumination) {
-			delta += state.buttons.brightness * 0.1;
-		}
+		if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+			if (state.buttons.illumination) {
+				delta += state.buttons.brightness * 0.1;
+			}
 
-		if (state.buttons.heater) {
-			delta += state.buttons.brightness * 0.5;
+			if (state.buttons.heater) {
+				delta += state.buttons.brightness * 0.5;
+			}
 		}
 	}
 

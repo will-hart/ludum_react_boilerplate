@@ -7,11 +7,12 @@ const updateWater = (state) => {
 	
 	if (state.condition.temperature.water >= 70) {
 		delta -= 1;
-	}
+	} else {
 
-	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
-		if (state.buttons.waterPumps) {
-			delta += state.buttons.waterFlowRate * 0.2;
+		if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+			if (state.buttons.waterPumps) {
+				delta += state.buttons.waterFlowRate * 0.2;
+			}
 		}
 	}
 

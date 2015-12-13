@@ -20,8 +20,9 @@ class DumbNutritionController extends React.Component {
 	}
 
 	render() {
-		const isActive = this.props.buttons.mainPower || 
+		let isActive = this.props.buttons.mainPower || 
 			(this.props.buttons.battery && this.props.condition.battery > 0);
+		isActive = isActive && this.props.condition.temperature.food < 70;
 
 		return (
 			<div className="control-group">

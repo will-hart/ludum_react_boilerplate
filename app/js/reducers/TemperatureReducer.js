@@ -3,10 +3,10 @@ const clamp = (value) => {
 };
 
 const updateModuleTemps = (state) => {
-	let waterTemp = state.condition.temperature.water;
-	let lightTemp = state.condition.temperature.light;
-	let foodTemp = state.condition.temperature.food;
-	let tempDelta = 0.5;
+	let waterTemp = state.condition.temperature.water - 0.2;
+	let lightTemp = state.condition.temperature.light - 0.2;
+	let foodTemp = state.condition.temperature.food - 0.2;
+	let tempDelta = 0.8;
 
 	// temp increase due to usage
 	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {

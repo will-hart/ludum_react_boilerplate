@@ -26,7 +26,6 @@ const CoreReducer = (state = storage.load(), action) => {
       };
   }
 
-  console.log(newState);
   storage.save(newState);
   return newState;
 };

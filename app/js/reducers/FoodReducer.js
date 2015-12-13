@@ -7,12 +7,12 @@ const updateFood = (state) => {
 
 	if (state.condition.temperature.food >= 70) {
 		delta -= 1;
-	}
-
-	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
-		if (state.buttons.nutrientMixer &&
-			state.buttons.nutrientPumps) {
-			delta += state.buttons.nutrientFlowRate * 0.2;
+	} else {
+		if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+			if (state.buttons.nutrientMixer &&
+				state.buttons.nutrientPumps) {
+				delta += state.buttons.nutrientFlowRate * 0.2;
+			}
 		}
 	}
 
