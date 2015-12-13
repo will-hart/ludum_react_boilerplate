@@ -37,9 +37,9 @@ const updateModuleTemps = (state) => {
 	
 
 	return {
-		water: waterTemp,
-		light: lightTemp,
-		food: foodTemp
+		water: clamp(waterTemp),
+		light: clamp(lightTemp),
+		food: clamp(foodTemp)
 	};
 };
 

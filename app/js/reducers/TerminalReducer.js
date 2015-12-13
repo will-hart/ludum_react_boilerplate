@@ -13,22 +13,21 @@ const terminalStatusLine = (item, value, heating) => {
 		status = "OK";
 	}
 
-	let heat = "HOT";
-	if (heating > 80) {
-		heat = "OFF";
-	}
+	const isNum = !isNaN(parseFloat(heating)) && isFinite(heating);
+	const heatVal = isNum ? (Math.round(heating * 10) / 10) + "\u00B0" : "N/A";
 
 	const itemPadding = 5 - item.length;
 	const statusPadding = 5 - status.length;
+	const heatSpacing = 5 - heatVal.length;
 
 	return "\u2000".repeat(4) + 
 		item + ":" + "\u2000".repeat(itemPadding) + 
 		status + "\u2000".repeat(statusPadding) + 
-		(heating > 70 ? heat : "\u2000".repeat(3));
+		heatVal + "\u2000".repeat(heatSpacing);
 };
 
 const batteryMessage = (state) => {
-	return terminalStatusLine("BATT", state.condition.battery, state.condition.temperature.battery);
+	return terminalStatusLine("BATT", state.condition.battery, "-");
 };
 
 const waterMessage = (state) => {
@@ -94,7 +93,7 @@ const updateTerminal = (state) => {
 	}
 
 	let term = introMessage + 
-		`\u2000\u2000\u2000TEMPERATURES:
+		`\u2000\u2000\u2000MODULES:
 ` +
 		batteryMessage(state) + waterMessage(state) + "\n" +
 		lightMessage(state) +
