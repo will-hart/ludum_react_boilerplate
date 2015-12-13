@@ -23,7 +23,6 @@ const initialState = {
     battery: 0,
     temperature: {
       system: 0,
-      battery: 0,
       light: 0,
       food: 0,
       water: 0

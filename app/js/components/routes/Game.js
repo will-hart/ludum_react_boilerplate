@@ -17,7 +17,7 @@ import {
 	updateCondition
 } from "../../action-creators";
 
-const GameUpdateRate = 200;
+const GameUpdateRate = 500;
 
 class DumbGame extends React.Component {
 	constructor(props) {
@@ -60,6 +60,7 @@ class DumbGame extends React.Component {
 
 	_getGameView() {
 		if (this.props.victory.finished) {
+			clearTimeout(this.updateTimer);
 			return (
 				<EndView victory={this.props.victory} />
 			);
