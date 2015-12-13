@@ -23,7 +23,7 @@ const updateLight = (state) => {
 		}
 	}
 
-	return clamp(state.condition.water + delta);
+	return clamp(state.condition.light + delta);
 };
 
 const LightReducer = (state) => {

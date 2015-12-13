@@ -16,7 +16,7 @@ const updateFood = (state) => {
 		}
 	}
 
-	return clamp(state.condition.water + delta);
+	return clamp(state.condition.food + delta);
 };
 
 const FoodReducer = (state) => {
