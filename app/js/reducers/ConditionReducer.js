@@ -53,7 +53,7 @@ const updateBattery = (state) => {
 const updateTemperature = (state) => {
 	let temp = state.condition.temperature.system;
 
-	if (state.buttons.battery || state.buttons.mainPower) {
+	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
 		temp += 0.05;
 	} else {
 		return {
@@ -98,12 +98,14 @@ const updateTemperature = (state) => {
 
 const updateLight = (state) => {
 	let delta = -0.1;
-	if (state.buttons.illumination) {
-		delta += state.buttons.brightness * 0.1;
-	}
+	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+		if (state.buttons.illumination) {
+			delta += state.buttons.brightness * 0.1;
+		}
 
-	if (state.buttons.heater) {
-		delta += state.buttons.brightness * 0.5;
+		if (state.buttons.heater) {
+			delta += state.buttons.brightness * 0.5;
+		}
 	}
 
 	return clamp(state.condition.water + delta);
@@ -111,9 +113,12 @@ const updateLight = (state) => {
 
 const updateFood = (state) => {
 	let delta = -0.1;
-	if (state.buttons.nutrientMixer &&
-		state.buttons.nutrientPumps) {
-		delta += state.buttons.nutrientFlowRate * 0.2;
+
+	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+		if (state.buttons.nutrientMixer &&
+			state.buttons.nutrientPumps) {
+			delta += state.buttons.nutrientFlowRate * 0.2;
+		}
 	}
 
 	return clamp(state.condition.water + delta);
@@ -121,8 +126,11 @@ const updateFood = (state) => {
 
 const updateWater = (state) => {
 	let delta = -0.1;
-	if (state.buttons.waterPumps) {
-		delta += state.buttons.waterFlowRate * 0.2;
+
+	if ((state.buttons.battery && state.condition.battery > 0) || state.buttons.mainPower) {
+		if (state.buttons.waterPumps) {
+			delta += state.buttons.waterFlowRate * 0.2;
+		}
 	}
 
 	return clamp(state.condition.water + delta);
@@ -130,11 +138,13 @@ const updateWater = (state) => {
 
 const updateGrowth = (state) => {
 	let delta = 0;
+
 	if (state.condition.light > 50 && 
 		state.condition.food > 30 && 
 		state.condition.water > 30) {
 		delta += 0.5;
 	}
+
 	return clamp(state.condition.growth + delta);
 };
 
@@ -151,7 +161,6 @@ const updateCondition = (state) => {
 		terminal: TerminalReducer(state)
 	};
 
-	// console.log(newState);
 	return newState;
 };
 

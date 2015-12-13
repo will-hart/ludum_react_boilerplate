@@ -19,13 +19,16 @@ class DumbWaterController extends React.Component {
 	}
 
 	render() {
+		const isActive = this.props.buttons.mainPower || 
+			(this.props.buttons.battery && this.props.condition.battery > 0);
+
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Water" backgroundOffset="-30px" />
 				<ToggleSwitch label="Pump" buttonName="waterPumps" isOn={this.props.buttons.waterPumps} onClick={this.props.onToggleButton} />
 				<ToggleSwitch label="Nutr. Mix" buttonName="nutrientMixer" isOn={this.props.buttons.nutrientMixer} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="waterFlowRate" value={this.props.buttons.waterFlowRate} onClick={this.props.onIncrementValue} />
-				<LedDisplay label="Power" isOn={this.props.buttons.mainPower || this.props.buttons.battery} />
+				<LedDisplay label="Power" isOn={isActive} />
 			</div>
 		);
 	}

@@ -46,7 +46,10 @@ const growthMessage = (state) => {
 
 
 const updateTerminal = (state) => {
-	if (!(state.buttons.battery || state.buttons.mainPower)) {
+	const isActive = state.buttons.mainPower || 
+		(state.buttons.battery && state.condition.battery > 0);
+
+	if (!isActive) {
 		return "";
 	}
 

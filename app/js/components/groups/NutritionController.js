@@ -20,13 +20,16 @@ class DumbNutritionController extends React.Component {
 	}
 
 	render() {
+		const isActive = this.props.buttons.mainPower || 
+			(this.props.buttons.battery && this.props.condition.battery > 0);
+
 		return (
 			<div className="control-group">
 				<VerticalLabel label="Nutrients" backgroundOffset="-60px" />
 				<Spacer />
 				<ToggleSwitch label="Pump" buttonName="nutrientPumps" isOn={this.props.buttons.nutrientPumps} onClick={this.props.onToggleButton} />
 				<RotarySwitch label="Flow Rate" buttonName="nutrientFlowRate" value={this.props.buttons.nutrientFlowRate} onClick={this.props.onIncrementValue} />
-				<LedDisplay label="Power" isOn={this.props.buttons.mainPower || this.props.buttons.battery} />
+				<LedDisplay label="Power" isOn={isActive} />
 			</div>
 		);
 	}
