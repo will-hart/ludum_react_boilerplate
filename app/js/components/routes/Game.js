@@ -17,6 +17,8 @@ import {
 	updateCondition
 } from "../../action-creators";
 
+const GameUpdateRate = 200;
+
 class DumbGame extends React.Component {
 	constructor(props) {
 		super(props);
@@ -29,7 +31,7 @@ class DumbGame extends React.Component {
 	}
 
 	componentDidMount() {
-		this.updateTimer = setInterval(this._update.bind(this), 500);
+		this.updateTimer = setInterval(this._update.bind(this), GameUpdateRate);
 	}
 
 	componentWillUnmount() {
