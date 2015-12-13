@@ -14,7 +14,12 @@ const terminalStatusLine = (item, value, heating) => {
 	}
 
 	const isNum = !isNaN(parseFloat(heating)) && isFinite(heating);
-	const heatVal = isNum ? (Math.round(heating * 10) / 10) + "\u00B0" : "N/A";
+	let heatVal = isNum ? Math.round(heating * 10) / 10 + "" : "N/A";
+
+	if (heatVal.length === 1) {
+		heatVal += ".0";
+	}
+	heatVal += "\u00B0";
 
 	const itemPadding = 5 - item.length;
 	const statusPadding = 5 - status.length;
