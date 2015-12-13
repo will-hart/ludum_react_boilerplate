@@ -18,8 +18,11 @@ class LedBarGraph extends React.Component {
 		const yOffset = (this.props.ledOn && this.props.powered) ? "-150px" : "0px";
 		const offset = xOffset + "px " + yOffset;
 
+		const percentage = Math.floor(this.props.value) + "%";
+
 		return (
 			<div className="led-bar-graph" style={{backgroundPosition: offset}}>
+				{percentage}
 				{this.props.label}
 			</div>
 		);

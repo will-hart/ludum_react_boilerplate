@@ -5,10 +5,10 @@ const clamp = (value) => {
 const updateGrowth = (state) => {
 	let delta = 0;
 
-	if (state.condition.light > 50 && 
+	if (state.condition.light > 30 && 
 		state.condition.food > 30 && 
 		state.condition.water > 30) {
-		delta += 0.25;
+		delta += 0.325;
 	}
 
 	return clamp(state.condition.growth + delta);
