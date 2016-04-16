@@ -1,3 +1,5 @@
+import { defaultAngularSpeed } from '../constants/Attributes';
+
 const doObstacleUpdate = (item, speed) => {
   let newTheta = item.theta + 0.05;
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { mouseTrap } from 'react-mousetrap';
 
+import { refreshPeriod } from '../../constants/Attributes';
+
 import './Player.scss';
 
 
@@ -31,7 +33,7 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
-    this.updateTimer = setTimeout(this._performUpdate, 70);
+    this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
     this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
   }
 
@@ -47,12 +49,12 @@ class Player extends React.Component {
 
   _performUpdate() {
     this.props.updateFrame();
-    this.updateTimer = setTimeout(this._performUpdate, 70);
+    this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
   }
 
   _performSpawn() {
     this.props.addObject();
-    this.updateTimer = setTimeout(this._performSpawn, 1500);
+    this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
   }
 
   render() {

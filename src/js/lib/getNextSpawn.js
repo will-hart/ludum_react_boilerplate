@@ -1,3 +1,3 @@
-const getNextSpawn = (elapsed) => Math.pow(Math.E, 3 - 0.03 * elapsed) + Math.sin(elapsed) + 1;
+const getNextSpawn = (elapsed) => elapsed > 100000 ? 500 : 1000 - 0.01 * elapsed;
 
 export default getNextSpawn;

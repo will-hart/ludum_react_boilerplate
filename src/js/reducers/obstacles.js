@@ -14,6 +14,13 @@ import {
   isShapeChanging
 } from '../lib';
 
+import {
+  deathRadius,
+  defaultRadius,
+  defaultSpeed,
+  refreshPeriod
+} from '../constants/Attributes';
+
 const initialState = {
   items: {},
   nextItem: -1,
@@ -28,10 +35,11 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case ADD_OBSTACLE:
       return Object.assign({}, state, {
+        nextItem: getNextSpawn(state.elapsed),
         items: Object.assign({}, state.items, {
           [lastId]: {
             id: lastId++,
-            r: 300,
+            r: defaultRadius,
             theta: getTheta(),
             type: 0
           }
@@ -72,10 +80,10 @@ export default function (state = initialState, action) {
       const keys = Object.keys(state.items);
 
       return Object.assign({}, state, {
-        elapsed: state.elapsed + 70,
+        elapsed: state.elapsed + refreshPeriod,
         items: keys.reduce((acc, key) => {
-          if (state.items[key].r > 20) {
-            acc[key] = doObstacleUpdate(state.items[key], 15);
+          if (state.items[key].r > deathRadius) {
+            acc[key] = doObstacleUpdate(state.items[key], defaultSpeed);
           }
 
           return acc;
