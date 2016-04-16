@@ -25,10 +25,6 @@ class Twirlygig extends Component {
     });
   }
 
-  onKeyPress(e) {
-    console.log(e);
-  }
-
   render () {
     const { actions, isPlaying, nextItem, playerType } = this.props;
 
@@ -41,12 +37,12 @@ class Twirlygig extends Component {
             addObject={actions.addObstacle}
             updateFrame={actions.updateFrame}
             spawnDelay={nextItem}
-            changeShape={actions.changeKey} />}
+            changeShape={actions.changeKey}
+            isPlaying={isPlaying} />}
 
           {isPlaying && this._getObstacles(this.props.obstacles, playerType)}
 
           {!isPlaying && <Instructions newGame={actions.newGame} />}
-          }
         </div>
       </div>
     );

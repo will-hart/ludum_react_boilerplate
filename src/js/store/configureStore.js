@@ -1,11 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers';
 import { persistState } from 'redux-devtools';
+import thunk from 'redux-thunk';
+
 
 export default function configureStore(initialState) {
 
   let enhancer;
-  const middleware = applyMiddleware();
+  const middleware = applyMiddleware(thunk);
 
   if (process.env.NODE_ENV !== 'production') {
 

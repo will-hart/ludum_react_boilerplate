@@ -1,5 +1,6 @@
 import {
   ADD_OBSTACLE,
+  ADD_SCORE,
   CHANGE_KEY,
   NEW_GAME,
   KILL_PLAYER,
@@ -26,7 +27,8 @@ const initialState = {
   nextItem: -1,
   elapsed: 0,
   activeKey: 0,
-  isPlaying: false
+  isPlaying: false,
+  score: 0
 };
 
 let lastId = 0;
@@ -46,6 +48,9 @@ export default function (state = initialState, action) {
         })
       });
 
+    case ADD_SCORE:
+      return Object.assign({}, state, { score: state.score + action.amount });
+
     case CHANGE_KEY:
       return Object.assign({}, state, {
         activeKey: action.key
@@ -53,17 +58,16 @@ export default function (state = initialState, action) {
 
     case KILL_PLAYER:
       return Object.assign({}, state, {
-        isPlaying: false
+        isPlaying: false,
+        items: {},
+        nextItem: -1
       });
 
     case NEW_GAME:
-      return {
-        items: {},
+      return Object.assign({}, initialState, {
         nextItem: 1000,
-        elapsed: 0,
-        activeKey: 0,
         isPlaying: true
-      };
+      });
 
     case REMOVE_ITEM:
       return Object.assign({}, state, {

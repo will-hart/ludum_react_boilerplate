@@ -1,8 +1,23 @@
 import * as types from '../constants/ActionTypes';
+import { deathRadius } from '../constants/Attributes';
 
 export function addObstacle() {
+  return (dispatch, getState) => {
+    const { obstacles } = getState();
+    const { isPlaying } = obstacles;
+
+    if (isPlaying) {
+      dispatch({
+        type: types.ADD_OBSTACLE
+      });
+    }
+  };
+}
+
+export function addScore(amount) {
   return {
-    type: types.ADD_OBSTACLE
+    type: types.ADD_SCORE,
+    amount
   };
 }
 
@@ -32,8 +47,26 @@ export function removeItem(id) {
   };
 }
 
+const doPlainUpdate = () => ({
+  type: types.UPDATE_FRAME
+});
+
 export function updateFrame() {
-  return {
-    type: types.UPDATE_FRAME
+  return (dispatch, getState) => {
+    const { obstacles } = getState();
+    const { activeKey, items } = obstacles;
+
+    const deadKeys = Object.keys(items).filter((item) => items[item].r < deathRadius + 5);
+    if (deadKeys.length > 0) {
+      if(deadKeys.find((key) => items[key].type !== activeKey)) {
+        dispatch(killPlayer());
+        return;
+      }
+
+      console.log('added score');
+      dispatch(addScore(deadKeys.length * 100));
+    }
+
+    dispatch(doPlainUpdate());
   };
 }

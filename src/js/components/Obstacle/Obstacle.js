@@ -11,13 +11,14 @@ export default class Obstacle extends React.Component {
 
   render() {
     const style = {
-      background: this.props.type === this.props.playerType ? '#FFF' : '#222',
       top: this.props.y,
       left: this.props.x
     };
 
+    const obstacleClasses = "obstacle player-type-" + this.props.type;
+
     return (
-      <div className="obstacle" style={style}></div>
+      <div className={obstacleClasses} style={style}></div>
     );
   }
 }

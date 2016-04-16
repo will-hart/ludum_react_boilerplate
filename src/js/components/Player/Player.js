@@ -11,7 +11,8 @@ class Player extends React.Component {
     addObject: React.PropTypes.func.isRequired,
     updateFrame: React.PropTypes.func.isRequired,
     spawnDelay: React.PropTypes.number.isRequired,
-    changeShape: React.PropTypes.func.isRequired
+    changeShape: React.PropTypes.func.isRequired,
+    isPlaying: React.PropTypes.bool.isRequired
   }
 
   constructor(props) {
@@ -34,10 +35,11 @@ class Player extends React.Component {
 
   componentDidMount() {
     this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
-    this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
+    this.spawnTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
   }
 
   componentWillUnmount() {
+    console.log('Unmounting player');
     clearTimeout(this.updateTimer);
     clearTimeout(this.spawnTimer);
 
@@ -48,13 +50,19 @@ class Player extends React.Component {
   }
 
   _performUpdate() {
-    this.props.updateFrame();
-    this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
+    if (this.props.isPlaying)
+    {
+      this.props.updateFrame();
+      this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
+    }
   }
 
   _performSpawn() {
-    this.props.addObject();
-    this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
+    if (this.props.isPlaying)
+    {
+      this.props.addObject();
+      this.spawnTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
+    }
   }
 
   render() {
