@@ -1,13 +1,7 @@
-### OSX ###
 .DS_Store
-
-### Windows ###
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-dist/
-
+.idea
+*.iml
 node_modules/
-bower_components/
-
+build/
+*.log*
+npm-debug.log
