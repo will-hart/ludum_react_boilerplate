@@ -11,6 +11,7 @@ import {
 import {
   doObstacleUpdate,
   getNextSpawn,
+  getSpeed,
   getTheta,
   isShapeChanging
 } from '../lib';
@@ -18,7 +19,6 @@ import {
 import {
   deathRadius,
   defaultRadius,
-  defaultSpeed,
   refreshPeriod
 } from '../constants/Attributes';
 
@@ -28,7 +28,8 @@ const initialState = {
   elapsed: 0,
   activeKey: 0,
   isPlaying: false,
-  score: 0
+  score: 0,
+  lastTick: 0
 };
 
 let lastId = 0;
@@ -67,7 +68,8 @@ export default function (state = initialState, action) {
     case NEW_GAME:
       return Object.assign({}, initialState, {
         nextItem: 1000,
-        isPlaying: true
+        isPlaying: true,
+        lastTick: new Date().getTime()
       });
 
     case REMOVE_ITEM:
@@ -83,12 +85,17 @@ export default function (state = initialState, action) {
 
     case UPDATE_FRAME:
       const keys = Object.keys(state.items);
+      const nowTicks = new Date().getTime();
+      const lastFrameDelta = nowTicks - state.lastTick;
 
       return Object.assign({}, state, {
-        elapsed: state.elapsed + refreshPeriod,
+        elapsed: state.elapsed + lastFrameDelta,
+        lastTick: nowTicks,
         items: keys.reduce((acc, key) => {
           if (state.items[key].r > deathRadius) {
-            acc[key] = doObstacleUpdate(state.items[key], defaultSpeed);
+            acc[key] = doObstacleUpdate(
+              state.items[key],
+              getSpeed(state.elapsed, lastFrameDelta, state.items[key].r));
           }
 
           return acc;

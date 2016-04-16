@@ -21,7 +21,6 @@ class Player extends React.Component {
     this._performUpdate = this._performUpdate.bind(this);
     this._performSpawn = this._performSpawn.bind(this);
 
-    this.updateTimer = null;
     this.spawnTimer = null;
     this.isPlaying = true;
   }
@@ -36,14 +35,13 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
-    this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
+    window.requestAnimationFrame(this._performUpdate);
     this.spawnTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
   }
 
   componentWillUnmount() {
     this.isPlaying = false;
 
-    clearTimeout(this.updateTimer);
     clearTimeout(this.spawnTimer);
 
     this.props.unbindShortcut('a');
@@ -56,7 +54,7 @@ class Player extends React.Component {
     if (this.isPlaying)
     {
       this.props.updateFrame();
-      this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
+      window.requestAnimationFrame(this._performUpdate);
     }
   }
 

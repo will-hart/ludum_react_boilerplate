@@ -6,7 +6,7 @@ export const halfWidth = width / 2;
 export const height = 600;
 export const halfHeight = height / 2;
 
-export const defaultSpeed = 15;
+export const defaultSpeed = 100;
 export const defaultRadius = 500;
 export const defaultAngularSpeed = 0.1;
 
