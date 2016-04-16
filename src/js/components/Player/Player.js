@@ -20,7 +20,7 @@ export default class Player extends React.Component {
   }
 
   componentDidMount() {
-    this.updateTimer = setTimeout(this._performUpdate, 35);
+    this.updateTimer = setTimeout(this._performUpdate, 70);
     this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
   }
 
@@ -31,7 +31,7 @@ export default class Player extends React.Component {
 
   _performUpdate() {
     this.props.updateFrame();
-    this.updateTimer = setTimeout(this._performUpdate, 35);
+    this.updateTimer = setTimeout(this._performUpdate, 70);
   }
 
   _performSpawn() {

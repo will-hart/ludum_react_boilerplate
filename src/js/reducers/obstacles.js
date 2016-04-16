@@ -15,7 +15,7 @@ import {
 } from '../lib';
 
 const initialState = {
-  items: [],
+  items: {},
   nextItem: -1,
   elapsed: 0,
   activeKey: 0,
@@ -29,7 +29,8 @@ export default function (state = initialState, action) {
     case ADD_OBSTACLE:
       return Object.assign({}, state, {
         items: Object.assign({}, state.items, {
-          [lastId++]: {
+          [lastId]: {
+            id: lastId++,
             r: 300,
             theta: getTheta(),
             type: 0
@@ -49,7 +50,7 @@ export default function (state = initialState, action) {
 
     case NEW_GAME:
       return {
-        items: [],
+        items: {},
         nextItem: 1000,
         elapsed: 0,
         activeKey: 0,
@@ -71,8 +72,12 @@ export default function (state = initialState, action) {
       const keys = Object.keys(state.items);
 
       return Object.assign({}, state, {
+        elapsed: state.elapsed + 70,
         items: keys.reduce((acc, key) => {
-          acc[key] = doObstacleUpdate(state.items[key]);
+          if (state.items[key].r > 20) {
+            acc[key] = doObstacleUpdate(state.items[key], 15);
+          }
+
           return acc;
         }, {})
       });

@@ -1,12 +1,12 @@
-const doObstacleUpdate = (item) => {
-  let newTheta = item.theta + 0.01;
+const doObstacleUpdate = (item, speed) => {
+  let newTheta = item.theta + 0.05;
 
   if (newTheta > 2 * Math.Pi) {
     newTheta = 0;
   }
 
   return Object.assign({}, item, {
-    r: item.r - 10,
+    r: item.r - speed,
     theta: newTheta
   });
 };
