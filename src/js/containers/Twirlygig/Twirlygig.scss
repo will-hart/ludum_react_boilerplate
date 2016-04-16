@@ -1,0 +1,18 @@
+.twirlygig {
+  margin: 0;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ccc;
+}
+
+.game-canvas {
+  background: #333;
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  position: relative;
+}

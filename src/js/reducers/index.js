@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import friendList from './friendList';
+import obstacles from './obstacles';
 
 const rootReducer = combineReducers({
-  friendList
+  obstacles
 });
 
 export default rootReducer;

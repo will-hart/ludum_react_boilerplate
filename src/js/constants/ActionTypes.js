@@ -1,3 +1,5 @@
-export const ADD_FRIEND = 'ADD_FRIEND';
-export const STAR_FRIEND = 'STAR_FRIEND';
-export const DELETE_FRIEND = 'DELETE_FRIEND';
+export const ADD_OBSTACLE = 'ADD_OBSTACLE';
+export const KILL_PLAYER = 'KILL_PLAYER';
+export const NEW_GAME = 'NEW_GAME';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const UPDATE_FRAME = 'UPDATE_FRAME';
