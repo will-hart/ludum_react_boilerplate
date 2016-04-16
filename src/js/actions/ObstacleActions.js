@@ -63,8 +63,7 @@ export function updateFrame() {
         return;
       }
 
-      console.log('added score');
-      dispatch(addScore(deadKeys.length * 100));
+      dispatch(addScore(deadKeys.length));
     }
 
     dispatch(doPlainUpdate());

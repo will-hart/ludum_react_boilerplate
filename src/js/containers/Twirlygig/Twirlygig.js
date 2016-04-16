@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Instructions, Obstacle, Player } from '../../components';
+import { GameOver, Instructions, Obstacle, Player, Score } from '../../components';
 import { getXY } from '../../lib';
 
 import * as ObstacleActions from '../../actions/ObstacleActions';
@@ -14,7 +14,19 @@ class Twirlygig extends Component {
     isPlaying: React.PropTypes.bool.isRequired,
     playerType: React.PropTypes.number.isRequired,
     nextItem: React.PropTypes.number.isRequired,
+    score: React.PropTypes.number.isRequired,
     obstacles: React.PropTypes.object.isRequired
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { played: false };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      played: this.state.played || nextProps.isPlaying
+    });
   }
 
   _getObstacles(items, playerType) {
@@ -27,7 +39,6 @@ class Twirlygig extends Component {
 
   render () {
     const { actions, isPlaying, nextItem, playerType } = this.props;
-
     const canvasClasses = "twirlygig player-type-" + playerType;
 
     return (
@@ -40,7 +51,11 @@ class Twirlygig extends Component {
             changeShape={actions.changeKey}
             isPlaying={isPlaying} />}
 
+          {isPlaying && this.state.played && <Score score={this.props.score} />}
+
           {isPlaying && this._getObstacles(this.props.obstacles, playerType)}
+
+          {!isPlaying && this.state.played && <GameOver score={this.props.score} />}
 
           {!isPlaying && <Instructions newGame={actions.newGame} />}
         </div>
@@ -54,6 +69,7 @@ function mapStateToProps(state) {
     isPlaying: state.obstacles.isPlaying,
     playerType: state.obstacles.activeKey,
     nextItem: state.obstacles.nextItem,
+    score: state.obstacles.score,
     obstacles: state.obstacles.items
   };
 }
