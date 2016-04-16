@@ -4,21 +4,23 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Player } from '../../components';
+import { Instructions, Player } from '../../components';
 
 import * as ObstacleActions from '../../actions/ObstacleActions';
 
 class Twirlygig extends Component {
 
   render () {
-    // const { actions } = this.props;
+    const { actions, isPlaying, nextItem } = this.props;
 
     return (
       <div className="twirlygig">
-        <h1>Twirlygig</h1>
-
         <div className="game-canvas">
-          <Player />
+          {isPlaying && <Player
+            addObject={actions.addObstacle}
+            updateFrame={actions.updateFrame}
+            spawnDelay={nextItem} />}
+          {!isPlaying && <Instructions newGame={actions.newGame} />}
         </div>
       </div>
     );
@@ -27,7 +29,8 @@ class Twirlygig extends Component {
 
 function mapStateToProps(state) {
   return {
-    // friendList: state.friendList
+    isPlaying: state.obstacles.isPlaying,
+    nextItem: state.obstacles.nextItem
   };
 }
 

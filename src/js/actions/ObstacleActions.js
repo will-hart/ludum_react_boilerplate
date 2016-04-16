@@ -6,6 +6,13 @@ export function addObstacle() {
   };
 }
 
+export function changeKey(key) {
+  return {
+    type: types.CHANGE_KEY,
+    key
+  };
+}
+
 export function killPlayer() {
   return {
     type: types.KILL_PLAYER

@@ -1,3 +1,3 @@
-const getNextSpawn = (elapsed) => 30 * Math.log10(elapsed) + 3 * Math.sin(0.2 * elapsed);
+const getNextSpawn = (elapsed) => Math.pow(Math.E, 3 - 0.03 * elapsed) + Math.sin(elapsed) + 1;
 
 export default getNextSpawn;
