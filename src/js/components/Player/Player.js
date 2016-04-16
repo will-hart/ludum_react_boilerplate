@@ -20,8 +20,10 @@ class Player extends React.Component {
 
     this._performUpdate = this._performUpdate.bind(this);
     this._performSpawn = this._performSpawn.bind(this);
+
     this.updateTimer = null;
     this.spawnTimer = null;
+    this.isPlaying = true;
   }
 
   componentWillMount() {
@@ -39,7 +41,8 @@ class Player extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('Unmounting player');
+    this.isPlaying = false;
+
     clearTimeout(this.updateTimer);
     clearTimeout(this.spawnTimer);
 
@@ -50,7 +53,7 @@ class Player extends React.Component {
   }
 
   _performUpdate() {
-    if (this.props.isPlaying)
+    if (this.isPlaying)
     {
       this.props.updateFrame();
       this.updateTimer = setTimeout(this._performUpdate, refreshPeriod);
@@ -58,7 +61,7 @@ class Player extends React.Component {
   }
 
   _performSpawn() {
-    if (this.props.isPlaying)
+    if (this.isPlaying)
     {
       this.props.addObject();
       this.spawnTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
