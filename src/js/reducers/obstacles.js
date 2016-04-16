@@ -60,7 +60,8 @@ export default function (state = initialState, action) {
       return Object.assign({}, state, {
         isPlaying: false,
         items: {},
-        nextItem: -1
+        nextItem: -1,
+        activeKey: 0
       });
 
     case NEW_GAME:
