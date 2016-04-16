@@ -1,13 +1,15 @@
 import React from 'react';
+import { mouseTrap } from 'react-mousetrap';
 
 import './Player.scss';
 
 
-export default class Player extends React.Component {
+class Player extends React.Component {
   static propTypes = {
     addObject: React.PropTypes.func.isRequired,
     updateFrame: React.PropTypes.func.isRequired,
-    spawnDelay: React.PropTypes.number.isRequired
+    spawnDelay: React.PropTypes.number.isRequired,
+    changeShape: React.PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -19,6 +21,15 @@ export default class Player extends React.Component {
     this.spawnTimer = null;
   }
 
+  componentWillMount() {
+    const { changeShape } = this.props;
+
+    this.props.bindShortcut('a', () => changeShape(0));
+    this.props.bindShortcut('s', () => changeShape(1));
+    this.props.bindShortcut('d', () => changeShape(2));
+    this.props.bindShortcut('f', () => changeShape(3));
+  }
+
   componentDidMount() {
     this.updateTimer = setTimeout(this._performUpdate, 70);
     this.updateTimer = setTimeout(this._performSpawn, this.props.spawnDelay);
@@ -27,6 +38,11 @@ export default class Player extends React.Component {
   componentWillUnmount() {
     clearTimeout(this.updateTimer);
     clearTimeout(this.spawnTimer);
+
+    this.props.unbindShortcut('a');
+    this.props.unbindShortcut('s');
+    this.props.unbindShortcut('d');
+    this.props.unbindShortcut('f');
   }
 
   _performUpdate() {
@@ -47,3 +63,5 @@ export default class Player extends React.Component {
     );
   }
 }
+
+export default mouseTrap(Player);
