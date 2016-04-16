@@ -41,7 +41,7 @@ export default function (state = initialState, action) {
             id: lastId++,
             r: defaultRadius,
             theta: getTheta(),
-            type: 0
+            type: Math.floor(4 * Math.random())
           }
         })
       });
