@@ -6,8 +6,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #333;
 }
+
+.player-type-0 { background: #333333; }
+.player-type-1 { background: #26664D; }
+.player-type-2 { background: #AD8937; }
+.player-type-3 { background: #AA2222; }
 
 .game-canvas {
   width: 800px;

@@ -32,8 +32,10 @@ class Twirlygig extends Component {
   render () {
     const { actions, isPlaying, nextItem, playerType } = this.props;
 
+    const canvasClasses = "twirlygig player-type-" + playerType;
+
     return (
-      <div className="twirlygig">
+      <div className={canvasClasses}>
         <div className="game-canvas">
           {isPlaying && <Player
             addObject={actions.addObstacle}
