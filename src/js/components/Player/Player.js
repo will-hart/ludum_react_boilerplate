@@ -1,7 +1,7 @@
 import React from 'react';
 import { mouseTrap } from 'react-mousetrap';
 
-import { refreshPeriod } from '../../constants/Attributes';
+import { refreshPeriod, halfHeight, halfWidth } from '../../constants/Attributes';
 
 
 import './Player.scss';
@@ -13,7 +13,8 @@ class Player extends React.Component {
     updateFrame: React.PropTypes.func.isRequired,
     spawnDelay: React.PropTypes.number.isRequired,
     changeShape: React.PropTypes.func.isRequired,
-    isPlaying: React.PropTypes.bool.isRequired
+    isPlaying: React.PropTypes.bool.isRequired,
+    playerType: React.PropTypes.number.isRequired
   }
 
   constructor(props) {
@@ -68,10 +69,16 @@ class Player extends React.Component {
   }
 
   render() {
+    const { playerType } = this.props;
+
     return (
       <g>
-        <circle cx={400} cy={300} r={10} fill="white" fillOpacity="0.5" />
         <circle cx={400} cy={300} r={30} fill="none" stroke="white" strokeWidth="1" strokeDasharray="5, 5" strokeOpacity="0.5" />
+
+        {playerType === 0 && <circle cx={halfWidth} cy={halfHeight} r={10} fill="none" strokeWidth="1" stroke="white" />}
+        {playerType === 1 && <rect x={halfWidth - 10} y={halfHeight - 10} width={20} height={20} fill="none" strokeWidth="1" stroke="white" />}
+        {playerType === 2 && <rect x={halfWidth - 10} y={halfHeight - 10} width={20} height={20} fill="none" strokeWidth="1" stroke="white" rx="5" ry="5" />}
+        {playerType === 3 && <polygon points={(halfWidth - 10) + "," + (halfHeight - 10) + " " + (halfWidth + 10) + "," + (halfHeight - 10) + " " + halfWidth + "," + (halfHeight + 10)} fill="none" strokeWidth="1" stroke="white" />}
       </g>
     );
   }

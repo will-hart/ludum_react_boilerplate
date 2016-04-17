@@ -46,16 +46,17 @@ class Twirlygig extends Component {
         <div className="game-canvas">
           {isPlaying && (
             <svg width="800" height="600">
+              <g>
+                {this._getObstacles(this.props.obstacles, playerType)}
+              </g>
+
               <Player
                 addObject={actions.addObstacle}
                 updateFrame={actions.updateFrame}
                 spawnDelay={nextItem}
                 changeShape={actions.changeKey}
-                isPlaying={isPlaying} />
-
-              <g>
-                {this._getObstacles(this.props.obstacles, playerType)}
-              </g>
+                isPlaying={isPlaying}
+                playerType={playerType} />
             </svg>
           )}
 

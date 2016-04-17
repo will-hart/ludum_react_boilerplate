@@ -23,13 +23,35 @@ export default class Obstacle extends React.Component {
     };
 
     const obstacleClasses = "obstacle player-type-" + this.props.type;
+    const { type, x, y } = this.props;
 
     return (
-      <circle
-        cx={this.props.x} cy={this.props.y} r={8}
-        stroke="white"
-        fill={fills[this.props.type]}
-      />
+      <g>
+        {type === 0 && <circle
+          cx={x} cy={y} r={8}
+          stroke="white"
+          fill={fills[type]}
+        />}
+
+        {type === 1 && <rect
+          x={x} y={y} width={16} height={16}
+          stroke="white"
+          fill={fills[type]}
+        />}
+
+        {type === 2 && <rect
+          x={x} y={y} width={16} height={16}
+          rx="5" ry="5"
+          stroke="white"
+          fill={fills[type]}
+        />}
+
+        {type === 3 && <polygon
+          points={(x - 8) + "," + (y - 8) + " " + (x + 8) + "," + (y - 8) + " " + (x) + "," + (y + 8)}
+          stroke="white"
+          fill={fills[type]}
+        />}
+      </g>
     );
   }
 }
