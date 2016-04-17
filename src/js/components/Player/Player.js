@@ -68,9 +68,10 @@ class Player extends React.Component {
 
   render() {
     return (
-      <div className="player">
-        <div className="player-dot"></div>
-      </div>
+      <g>
+        <circle cx={400} cy={300} r={10} fill="white" fillOpacity="0.5" />
+        <circle cx={400} cy={300} r={30} fill="none" stroke="white" strokeWidth="1" strokeDasharray="5, 5" strokeOpacity="0.5" />
+      </g>
     );
   }
 }

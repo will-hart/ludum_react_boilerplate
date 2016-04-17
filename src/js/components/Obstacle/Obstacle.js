@@ -1,6 +1,13 @@
 import React from 'react';
 import './Obstacle.scss';
 
+const fills = [
+  '#333333',
+  '#26664D',
+  '#AD8937',
+  '#AA2222'
+];
+
 export default class Obstacle extends React.Component {
   static propTypes = {
     x: React.PropTypes.number.isRequired,
@@ -18,7 +25,11 @@ export default class Obstacle extends React.Component {
     const obstacleClasses = "obstacle player-type-" + this.props.type;
 
     return (
-      <div className={obstacleClasses} style={style}></div>
+      <circle
+        cx={this.props.x} cy={this.props.y} r={8}
+        stroke="white"
+        fill={fills[this.props.type]}
+      />
     );
   }
 }
