@@ -3,6 +3,7 @@ import { mouseTrap } from 'react-mousetrap';
 
 import { refreshPeriod } from '../../constants/Attributes';
 
+
 import './Player.scss';
 
 

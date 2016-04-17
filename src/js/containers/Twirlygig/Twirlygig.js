@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { GameOver, Instructions, Obstacle, Player, Score } from '../../components';
+import { GameOver, Instructions, Obstacle, Player, PlayerKeys, Score } from '../../components';
 import { getXY } from '../../lib';
 
 import * as ObstacleActions from '../../actions/ObstacleActions';
@@ -58,6 +58,8 @@ class Twirlygig extends Component {
               </g>
             </svg>
           )}
+
+          {isPlaying && <PlayerKeys />}
 
           {isPlaying && this.state.played && <Score score={this.props.score} />}
 
